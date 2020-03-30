@@ -1,3 +1,57 @@
-.fancy-header {
-    color: purple;
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    color: darkslateblue;
 }
+ body {
+    background-image: url("../img/bluesky.jpg");
+    background-position: center;
+    background-size: cover;
+     font-family: 'Baloo Thambi 2', cursive;
+    font-size: 1.3em;
+ }
+
+ ul {
+     list-style-type: armenian;
+ }
+
+ ol {
+     list-style-type: lower-greek;
+ }
+
+ img {
+     width: 25%;
+     height: 25%;
+     margin-left: 10px;
+     border-radius: 5%;
+ }
+
+ table, th, td {
+     border: 1px solid black;
+ }
+
+ th {
+     width: 25%;
+     font-family: 'Baloo Thambi 2', cursive;
+     font-family: 'Anton', sans-serif;
+ }
+
+ a:link {
+     color: chocolate;
+ }
+
+ a:visited {
+     color: #c8dc0c;
+ }
+
+a:hover {
+    color: #ff1f04;
+}
+
+ a:active {
+     color: aquamarine;
+ }
+
+ img:hover {
+     transform: scale(1.1);
+ }
