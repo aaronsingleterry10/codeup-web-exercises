@@ -9,25 +9,11 @@
     <script>
         "use strict";
 
-        // Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two.
-        //     Examples:
-        // twoMoreAwayFromZero(2) will return 4
-        // twoMoreAwayFromZero(0) will return 2
-        // twoMoreAwayFromZero(0.5) will return 2.5
-        // twoMoreAwayFromZero(-2) will return -4
-        // twoMoreAwayFromZero(-3.5) will return -5.5
-
-        function twoMoreAwayFromZero(num) {
-            if (num >= 0) {
-                num = num + 2;
-            }
-            if (num < 0) {
-                num = num - 2;
-            }
-            return num;
+        function findQuotient(a, b) {
+            return a / b;
         }
 
-        console.log(twoMoreAwayFromZero(0));
+        console.log(findQuotient(10, 2));
 
     </script>
     </body>
