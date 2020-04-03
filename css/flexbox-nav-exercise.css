@@ -34,6 +34,9 @@ a {
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
     padding: .2em 0;
+    /*margin-right: calc(50% - 13em);*/
+    position: relative;
+    right: .7em;
 }
 
 
