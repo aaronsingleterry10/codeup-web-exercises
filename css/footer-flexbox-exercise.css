@@ -22,21 +22,23 @@ h2 {
 
 input[type=text] {
     margin: .3em .3em .3em 0;
+    width: 17em;
+    height: 2em;
     opacity: .6;
 }
 
 textarea, button {
+    margin: .3em .3em .3em 0;
+    width: 17em;
     opacity: .6;
 }
 
 
 .big-container {
     background-color: #F86A0D;
-    border: 1px solid black;
-
     color: whitesmoke;
     width: 55vw;
-    height: 45vw;
+    height: 33vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,13 +48,13 @@ textarea, button {
 
 
 .contact {
-
+    opacity: .8;
 }
 
 .lorem, .default-font {
     font-family: 'Noto Sans', sans-serif;
     font-size: .7em;
-    opacity: .6;
+    opacity: .5;
 }
 
 /*.default-font {*/
@@ -62,16 +64,19 @@ textarea, button {
 
 .medium-container {
     margin-top: 1.5em;
-    width: calc(100% - 10em);
+    width: calc(100% - 11em);
     display: flex;
     justify-content: space-between;
 }
 
 .bottom-line {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #FEC5A8;
+    height: 2em;
+    margin-bottom: 1em;
     font-family: 'Noto Sans', sans-serif;
     font-size: .8em;
     font-weight: bolder;
+    opacity: .8;
 }
 
 .talk-with-us, .say-hello, .social-media {
