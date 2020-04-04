@@ -16,13 +16,27 @@ footer {
 
 }
 
+h2 {
+    font-family: 'Work Sans', sans-serif;
+}
+
+input[type=text] {
+    margin: .3em .3em .3em 0;
+    opacity: .6;
+}
+
+textarea, button {
+    opacity: .6;
+}
+
+
 .big-container {
     background-color: #F86A0D;
     border: 1px solid black;
 
     color: whitesmoke;
-    width: 60vw;
-    height: 40vw;
+    width: 55vw;
+    height: 45vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,30 +44,40 @@ footer {
 
 }
 
-h2 {
-    font-family: 'Work Sans', sans-serif;
-}
 
 .contact {
 
 }
 
-.lorem {
+.lorem, .default-font {
     font-family: 'Noto Sans', sans-serif;
     font-size: .7em;
+    opacity: .6;
+}
+
+/*.default-font {*/
+/*    font-family: 'Noto Sans', sans-serif;*/
+/*    font-size: .7em;*/
+/*}*/
+
+.medium-container {
+    margin-top: 1.5em;
+    width: calc(100% - 10em);
+    display: flex;
+    justify-content: space-between;
 }
 
 .bottom-line {
     border-bottom: 1px solid black;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: .8em;
+    font-weight: bolder;
 }
 
-.talk-with-us {
-    padding-right: 0;
+.talk-with-us, .say-hello, .social-media {
 }
 
-.social-media {
-    /*padding-right: 4em ;*/
-}
+
 
 .container {
     /*display: flex;*/
