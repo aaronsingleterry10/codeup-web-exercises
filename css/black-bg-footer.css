@@ -1,0 +1,43 @@
+footer {
+    width: calc(100% - 23em);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+}
+
+.top-section {
+    border: 1px solid black;
+    background-color: #000;
+    padding: 2em 0;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bottom-section {
+    border: 1px solid black;
+    background-color: #333333;
+    padding: 1.3em 0;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    background-color: lightskyblue;
+}
