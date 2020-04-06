@@ -10,11 +10,21 @@ i {
 
 input[type=text] {
     border-radius: 20px;
-    border: 1px solid whitesmoke;
+    border: 1px solid #555;
     background-color: black;
     height: 1em;
     width: 17em;
     padding: 1em;
+}
+
+button {
+    margin-top: .7em;
+    height: 4em;
+    width: 8em;
+    background-color: #9A9A9A;
+    border-radius: 20px;
+    color: lightgrey;
+    font-size: 8px;
 }
 
 ul {
