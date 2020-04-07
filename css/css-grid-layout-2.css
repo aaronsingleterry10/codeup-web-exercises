@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+}
+
 :root {
     --bgr-color: #9acd32;
 }
@@ -11,23 +15,17 @@
 }
 
 .wrapper {
-    width: 750px;
-    height: 415px;
-    display: inline-grid;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
     grid-gap: .3em;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 10% 70% 10% 10%;
     grid-template-areas:
-            "head head head head head head head head head head head"
-            "nav  nav  art  art  art  art  art  art  art  art  art"
-            "nav  nav  art  art  art  art  art  art  art  art  art"
-            "nav  nav  art  art  art  art  art  art  art  art  art"
-            "nav  nav  art  art  art  art  art  art  art  art  art"
-            "nav  nav  art  art  art  art  art  art  art  art  art"
-            "nav  nav  art  art  art  art  art  art  art  art  art"
-            "nav  nav  art  art  art  art  art  art  art  art  art"
-            "nav  nav  art  art  art  art  art  art  art  art  art"
-            "nav  nav  art  art  art  art  art  art  art  art  art"
-            "nav  nav  ads  ads  ads  ads  ads  ads  ads  ads  ads"
-            "foot foot foot foot foot foot foot foot foot foot foot";
+                "head head"
+                "nav  art"
+                "nav  ads"
+                "foot foot";
 }
 
 header {
