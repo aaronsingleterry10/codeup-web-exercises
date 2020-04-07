@@ -16,13 +16,6 @@
     display: inline-grid;
     grid-gap: .3em;
     grid-template-areas:
-            /*"head head head head head head head head"*/
-            /*"nav  nav  art  art  art  art  art  art"*/
-            /*"nav  nav  art  art  art  art  art  art"*/
-            /*"nav  nav  art  art  art  art  art  art"*/
-            /*"nav  nav  art  art  art  art  art  art"*/
-            /*"nav  nav  ads  ads  ads  ads  ads  ads"*/
-            /*"foot foot foot foot foot foot foot foot";*/
             "head head head head head head head head head head head"
             "nav  nav  art  art  art  art  art  art  art  art  art"
             "nav  nav  art  art  art  art  art  art  art  art  art"

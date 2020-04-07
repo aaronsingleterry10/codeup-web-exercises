@@ -6,16 +6,11 @@
     --bg-color: #ffd700;
 }
 
-body {
-    margin: 0;
-}
-
 .wrapper div {
     margin: .5em;
 }
 
 .wrapper {
-    border: 1px solid black;
     width: 750px;
     height: 415px;
     display: inline-grid;
