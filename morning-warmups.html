@@ -9,11 +9,18 @@
     <script>
         "use strict";
 
-        function evenOrNot(num) {
-            return num % 2 === 0;
+        // function evenOrNot(num) {
+        //     return num % 2 === 0;
+        // }
+        //
+        // console.log(evenOrNot(10));
+
+        function returnEvenOddMessage(num) {
+            (num % 2 !== 0) ? console.log("is odd") : console.log("is even");
         }
 
-        console.log(evenOrNot(10));
+        // console.log(returnEvenOddMessage(5));
+        returnEvenOddMessage(7);
 
     </script>
     </body>
