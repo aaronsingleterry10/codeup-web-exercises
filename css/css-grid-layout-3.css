@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper div {
+    background-color: #ffd700;
+    color: white;
+    padding: .3em;
+    font-size: 2em;
+}
+
+.wrapper {
+    display: inline-grid;
+    grid-template-columns: repeat(8, 100px);
+    grid-template-rows: repeat(5, 100px);
+    grid-gap: .3em;
+}
+
+.one {grid-area: 1 / 1 / 2 / 9}
+.two {grid-area: 2 / 1 / 6 / 3}
+.three {grid-area: 2 / 3 / 3 / 5}
+.four {grid-area: 2 / 5 / 3 / 9}
+.five {grid-area: 3 / 3 / 4 / 7}
+.six {grid-area: 3 / 7 / 4 / 9}
+.seven {grid-area: 4 / 3 / 5 / 5}
+.eight {grid-area: 4 / 5 / 5 / 7}
+.nine {grid-area: 4 / 7 / 5 / 9}
+.ten {grid-area: 5 / 3 / 6 / 9}
