@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffd700;
+}
+
+body {
+    margin: 0;
+}
+
+.wrapper div {
+    margin: .5em;
+}
+
+.wrapper {
+    border: 1px solid black;
+    width: 750px;
+    height: 415px;
+    display: inline-grid;
+    grid-gap: .3em;
+    grid-template-areas:
+                "head head head head head head head head head head head"
+                "nav  nav  art  art  art  art  art  art  art  ad   ad"
+                "nav  nav  art  art  art  art  art  art  art  ad   ad"
+                "nav  nav  art  art  art  art  art  art  art  ad   ad"
+                "nav  nav  art  art  art  art  art  art  art  ad   ad"
+                "nav  nav  art  art  art  art  art  art  art  ad   ad"
+                "nav  nav  art  art  art  art  art  art  art  ad   ad"
+                "nav  nav  art  art  art  art  art  art  art  ad   ad"
+                "nav  nav foot foot foot foot foot foot foot foot foot";
+}
+
+header {
+    grid-area: head;
+    background-color: var(--bg-color);
+}
+
+nav {
+    grid-area: nav;
+    background-color: var(--bg-color);
+}
+
+article {
+    grid-area: art;
+    background-color: var(--bg-color);
+}
+
+section {
+    grid-area: ad;
+    background-color: var(--bg-color);
+}
+
+footer {
+    grid-area: foot;
+    background-color: var(--bg-color);
+}
