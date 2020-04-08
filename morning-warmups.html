@@ -15,12 +15,18 @@
         //
         // console.log(evenOrNot(10));
 
-        function returnEvenOddMessage(num) {
-            (num % 2 !== 0) ? console.log("is odd") : console.log("is even");
+        // function returnEvenOddMessage(num) {
+        //     (num % 2 !== 0) ? console.log("is odd") : console.log("is even");
+        // }
+        //
+        // // console.log(returnEvenOddMessage(5));
+        // returnEvenOddMessage(7);
+
+        function isWhole(num) {
+            return num === Math.round(num);
         }
 
-        // console.log(returnEvenOddMessage(5));
-        returnEvenOddMessage(7);
+        console.log(isWhole(4));
 
     </script>
     </body>
