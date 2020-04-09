@@ -1,0 +1,34 @@
+.bgd-img {
+    background-image: url("../img/pizza.png");
+}
+
+.container-fluid, h1 {
+    text-align: center;
+    background-color: whitesmoke;
+    opacity: .7;
+}
+
+a span {
+    margin-right: .3em;
+    margin-bottom: .2em;
+}
+
+.card-margin {
+    margin: 1em;
+}
+
+.list-group-item>input[type=radio] {
+    margin-right: .3em;
+}
+
+.text-margin {
+    margin: .5em 1em;
+}
+
+.cst-select {
+    padding: 0 1em;
+}
+
+.sauce-select {
+    margin-top: .5em;
+}
