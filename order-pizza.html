@@ -61,8 +61,8 @@
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                                    <li class="list-group-item"><input type="radio">Small (10")</li>
-                                    <li class="list-group-item"><input type="radio">Medium (12")</li>
+                                    <li class="list-group-item"><input type="radio" id="small" name="size1"><label for="small">Small (10")</label></li>
+                                    <li class="list-group-item"><input type="radio" id="medium1" name="size1"><label for="medium1">Medium (12")</label></li>
                                 </ul>
                             </div>
                             <div class="card card-margin" style="width: auto;">
@@ -71,8 +71,8 @@
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                                    <li class="list-group-item"><input type="radio">Medium (12")</li>
-                                    <li class="list-group-item"><input type="radio">Large (14")</li>
+                                    <li class="list-group-item"><input type="radio" id="medium2" name="size2"><label for="medium2">Medium (12")</label></li>
+                                    <li class="list-group-item"><input type="radio" id="large" name="size2"><label for="large">Large (14")</label></li>
                                 </ul>
                             </div>
                             <div class="card-footer text-muted text-right">
@@ -139,7 +139,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="card bottom-margin">
+                            <div class="card-header text-light bg-primary">
+                                Choose Toppings
+                            </div>
+                            <div class="card card-margin" style="width: auto;">
+                                <div class="card-header">
+                                    Choose Meats
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><input type="radio" id="beef" name="meat"><label for="beef">Beef</label></li>
+                                    <li class="list-group-item"><input type="radio" id="ham" name="meat"><label for="ham">Ham</label></li>
+                                    <li class="list-group-item"><input type="radio" id="philly" name="meat"><label for="philly">Philly Steak</label></li>
+                                    <li class="list-group-item"><input type="radio" id="bacon" name="meat"><label for="bacon">Bacon</label></li>
+                                </ul>
+                            </div>
+                            <div class="card card-margin" style="width: auto;">
+                                <div class="card-header">
+                                    Choose Non-Meats
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><input type="radio" id="green-peppers" name="veggies"><label for="green-peppers">Green Peppers</label></li>
+                                    <li class="list-group-item"><input type="radio" id="mushrooms" name="veggies"><label for="mushrooms">Mushrooms</label></li>
+                                    <li class="list-group-item"><input type="radio" id="onions" name="veggies"><label for="onions">Onions</label></li>
+                                    <li class="list-group-item"><input type="radio" id="jalapenos" name="veggies"><label for="jalapenos">Jalapeno Peppers</label></li>
+                                </ul>
+                            </div>
+                            <div class="card-footer text-muted text-right">
+                                <a href="#" class="btn btn-primary">Next Step</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
