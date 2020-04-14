@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #F0F0F0;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 64px;
+}
+
+h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 48px;
+}
+
+.park-city {
+    margin: 3em 0;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    background-color: lightgrey;
+    border: 3px solid white;
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
