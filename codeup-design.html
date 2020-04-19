@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="container">
+    <main class="container-fluid">
         <div class="row">
             <div class="col-12 text-center">
                 <h1>VISUAL DESIGN & WEB DEVELOPMENT</h1>
@@ -19,41 +19,114 @@
                 <h2>FROM PARK CITY, UTAH</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-6 d-flex justify-content-end col-sm-3">
+        <!--BIG CIRCLES -->
+        <div class="row underline-circle m-0">
+            <div class="col-6 col-sm-3">
                 <div class="circle red">DESIGN</div>
             </div>
             <div class="col-6 col-sm-3">
                 <div class="circle orange">DEVELOP</div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-6 d-flex justify-content-end col-sm-3">
+            <div class="col-6 col-sm-3">
                 <div class="circle green">SUPPORT</div>
             </div>
             <div class="col-6 col-sm-3">
                 <div class="circle blue">HOST</div>
             </div>
         </div>
+
+        <!-- SELECTED WORK -->
+
         <div class="row text-center">
             <div class="col-12 abel-font-40">SELECTED WORK</div>
         </div>
+
+        <!-- FIRST FEATURE -->
+        <!--Removed "card" class from divs on cards -->
         <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <img src="img2/apple-ipad.jpg" alt="apple ipad" class="w-100">
+            <div class="col-sm-6">
+                <div class="" style="width: 100%;">
+                    <img src="img2/apple-ipad.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="featured-icons">
+                            <div class="abel-font">
+                                <div>FEATURED PROJECT</div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="icon red d-flex justify-content-center align-items-center">D</div>
+                                <div class="icon orange d-flex justify-content-center align-items-center">D</div>
+                                <div class="icon green d-flex justify-content-center align-items-center">S</div>
+                                <div class="icon blue d-flex justify-content-center align-items-center">H</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HIDDEN ON XS SCREEN!! -->
+
+            <!-- SECOND FEATURE -->
+
+            <div class="col-sm-6 d-none d-sm-block">
+                <div class="" style="width: 100%;">
+                    <img src="img2/macbook.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="featured-icons">
+                            <div class="abel-font">
+                                <div>FEATURED PROJECT</div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="icon red d-flex justify-content-center align-items-center">D</div>
+                                <div class="icon orange d-flex justify-content-center align-items-center">D</div>
+                                <div class="icon green d-flex justify-content-center align-items-center">S</div>
+                                <div class="icon blue d-flex justify-content-center align-items-center">H</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row featured-icons">
-            <div class="col-6 abel-font">
-                <div>FEATURED PROJECT</div>
+                <!--THIRD FEATURE -->
+        <div class="row">
+            <div class="col-sm-6 d-none d-sm-block">
+                <div class="" style="width: 100%;">
+                    <img src="img2/man.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="featured-icons">
+                            <div class="abel-font">
+                                <div>FEATURED PROJECT</div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="icon red d-flex justify-content-center align-items-center">D</div>
+                                <div class="icon orange d-flex justify-content-center align-items-center">D</div>
+                                <div class="icon green d-flex justify-content-center align-items-center">S</div>
+                                <div class="icon blue d-flex justify-content-center align-items-center">H</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-6 d-flex justify-content-end">
-                <div class="icon red d-flex justify-content-center align-items-center">D</div>
-                <div class="icon orange d-flex justify-content-center align-items-center">D</div>
-                <div class="icon green d-flex justify-content-center align-items-center">S</div>
-                <div class="icon blue d-flex justify-content-center align-items-center">H</div>
+                <!--FOURTH FEATURE -->
+            <div class="col-sm-6 d-none d-sm-block">
+                <div class="" style="width: 100%;">
+                    <img src="img2/security.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="featured-icons">
+                            <div class="abel-font">
+                                <div>FEATURED PROJECT</div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="icon red d-flex justify-content-center align-items-center">D</div>
+                                <div class="icon orange d-flex justify-content-center align-items-center">D</div>
+                                <div class="icon green d-flex justify-content-center align-items-center">S</div>
+                                <div class="icon blue d-flex justify-content-center align-items-center">H</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
