@@ -68,11 +68,6 @@ img {
     border: 14px solid lightgrey;
 }
 
-.underline-circle {
-    border-bottom: 1px solid gray;
-    padding-bottom: 2em;
-}
-
 .featured-icons {
     display: flex;
     align-items: center;
@@ -93,11 +88,22 @@ img {
         font-size: 18px;
     }
 
+    .circle {
+        width: 140px;
+        height: 140px;
+        border-radius: 150px;
+    }
+
     .icon {
         width: 25px;
         height: 25px;
         margin: .1em;
         font-size: 18px;
+    }
+
+    .underline-circle {
+        border-bottom: 1px solid gray;
+        padding-bottom: 2em;
     }
 }
 
@@ -106,12 +112,21 @@ img {
         font-size: 24px;
     }
 
+    .circle {
+        margin-left: 2em;
+    }
+
     .icon {
         width: 30px;
         height: 30px;
         border-radius: 50px;
         margin: .2em;
         font-size: 20px;
+    }
+
+    .underline-circle {
+        border-bottom: 1px solid gray;
+        padding-bottom: 2em;
     }
 }
 
