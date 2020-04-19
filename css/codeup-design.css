@@ -53,7 +53,7 @@ h2 {
 
 .abel-font-40 {
     font-family: 'Abel', sans-serif;
-    font-size: 36px;
+    font-size: 28px;
     margin-top: 5em;
     margin-bottom: 2em;
 }
@@ -83,14 +83,40 @@ img {
     margin: .3em;
 }
 
+.image img {
+    border: none;
+    width: 60px;
+    height: 60px;
+}
+
+.article-section {
+    margin-bottom: 1em;
+}
+
+.article-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    margin-left: 2em;
+}
+
+i {
+    color: #3B94D9;
+}
+
+.tweet {
+    font-family: 'Abel', sans-serif;
+}
+
+/*   Small Screen!!!   */
+
 @media screen and (min-width: 576px) {
     .abel-font {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .circle {
-        width: 140px;
-        height: 140px;
+        width: 125px;
+        height: 125px;
         border-radius: 150px;
     }
 
@@ -107,26 +133,37 @@ img {
     }
 }
 
+/*   Medium Screen!!!   */
+
 @media screen and (min-width: 768px) {
     .abel-font {
-        font-size: 24px;
+        font-size: 12px;
+    }
+
+    .abel-font-40 {
+        font-size: 18px;
     }
 
     .circle {
-        margin-left: 2em;
+        margin: 0;
     }
 
     .icon {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         border-radius: 50px;
         margin: .2em;
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .underline-circle {
         border-bottom: 1px solid gray;
         padding-bottom: 2em;
     }
+
+    .selected-last {
+        text-align: left;
+    }
+
 }
 
