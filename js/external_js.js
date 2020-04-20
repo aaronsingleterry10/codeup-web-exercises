@@ -1,3 +1,5 @@
+"use strict";
+
 console.log("Hello from external JavaScript!!!");
 
 alert("Welcome to my website!!");
@@ -33,7 +35,8 @@ alert("The answer is: " + "$" + totalPaycheck);
 
 prompt("A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.");
 
-
-
+alert("The solution is: (!classFull && !conflictSchedule) && enrollClass");
 
 prompt("A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.");
+
+alert("The solution is: (premiumMember || moreThanTwo) && !expired");
