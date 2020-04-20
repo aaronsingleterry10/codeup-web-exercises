@@ -8,6 +8,9 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
+function sayHello(name) {
+    return "Hello, " + name + "!";
+}
 
 /**
  * TODO:
@@ -17,12 +20,22 @@
  * console.log 'helloMessage' to check your work
  */
 
+var helloMessage = sayHello("Aaron");
+
+console.log(helloMessage);
+
+
+
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+
+var myName = "Aaron";
+
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -45,6 +58,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+console.log(random);
+
+function isTwo(num) {
+    return num === 2;
+}
+
+console.log(isTwo(random));
+
 
 /**
  * TODO:
@@ -57,13 +78,23 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+function calculateTip(num1, num2) {
+    return num1 * num2;
+}
 
+console.log(calculateTip(0.20, 20), "4");
+console.log(calculateTip(0.25, 25.50), "6.37");
+console.log(calculateTip(0.15, 33.42), "5.013");
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+var billDollarAmount = prompt("How much was your bill?");
+var tipDollarAmount = prompt("How much do you want to tip?");
+alert("Your tip should be: " + "$" + calculateTip(billDollarAmount, tipDollarAmount).toFixed(2));
 
 /**
  * TODO:
@@ -79,3 +110,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+var originalPrice = 100;
+var discountPercent = .2;
+
+function applyDiscount(price, discount) {
+    return price - (price * discount);
+}
+
+console.log(applyDiscount(originalPrice, discountPercent), "80");
+console.log(applyDiscount(50, .1), "45");
+
