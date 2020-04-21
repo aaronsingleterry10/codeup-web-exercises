@@ -111,7 +111,7 @@ i {
 
 @media screen and (min-width: 576px) {
     .abel-font {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .circle {
@@ -121,10 +121,11 @@ i {
     }
 
     .icon {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
+        border-radius: 25px;
         margin: .1em;
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .underline-circle {
@@ -135,7 +136,7 @@ i {
 
 /*   Medium Screen!!!   */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     .abel-font {
         font-size: 12px;
     }
@@ -149,9 +150,9 @@ i {
     }
 
     .icon {
-        width: 25px;
-        height: 25px;
-        border-radius: 50px;
+        width: 20px;
+        height: 20px;
+        border-radius: 25px;
         margin: .2em;
         font-size: 15px;
     }
@@ -165,5 +166,21 @@ i {
         text-align: left;
     }
 
+}
+
+/*   Large Screen   */
+
+@media screen and (min-width: 992px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .circle {
+        font-size: 20px;
+    }
 }
 
