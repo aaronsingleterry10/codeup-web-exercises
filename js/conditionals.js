@@ -27,10 +27,8 @@ function analyzeColor(color) {
         return 'blue is the color of the sky';
     } else if (color === 'red') {
         return 'strawberries are red';
-    } else if (color === 'cyan') {
-        return 'I don\'t know anything about cyan';
     } else {
-        return 'not one of the colors we have talked about';
+        return 'I do not know anything about ' + color;
     }
 }
 
@@ -70,11 +68,9 @@ function analyzeColorSwitch(color) {
         case 'red':
             return 'strawberries are red';
             break;
-        case 'cyan':
-            return 'I do not know anything cyan';
-            break;
         default:
-            return color + ' is not a color we talked about';
+            return 'I do not know anything about ' + color;
+            break;
     }
 }
 
@@ -128,10 +124,8 @@ function calculateTotal(luckyNumber, totalAmount) {
         return totalAmount - (totalAmount * .35);
     } else if (luckyNumber === 4) {
         return totalAmount - (totalAmount * .50);
-    } else if ( luckyNumber === 5) {
-        return 'Congratulations! This item is free of charge!!!!';
     } else {
-        return 'Sorry, no discount. That\'ll be $' + totalAmount.toFixed(2);
+        return 0;
     }
 }
 
@@ -153,13 +147,13 @@ console.log(calculateTotal(6, 100));
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 
-var totalBill = parseInt(prompt('How much was your bill total?'));
+var totalBill = parseFloat(prompt('How much was your bill total?'));
 
 alert('Your lucky number is:  ' + luckyNumber + '.');
 alert('Your price before the applied discount: $' + totalBill.toFixed(2) + '.');
 alert('Your new total amount is.........');
 alert('...drumrole...');
-alert('!!!! $' + calculateTotal(luckyNumber, totalBill) + ' !!!!');
+alert('!!!! $' + calculateTotal(luckyNumber, totalBill).toFixed(2) + ' !!!!');
 
 /**
  * TODO:
@@ -177,6 +171,23 @@ alert('!!!! $' + calculateTotal(luckyNumber, totalBill) + ' !!!!');
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+// var confirmation = confirm('Would you like to enter a number?');
+//
+// if (confirmation === true) {
+//     var numberAnswer = parseInt(prompt('Enter number here.'));
+//     if (isNaN(numberAnswer) === false) {
+//         (numberAnswer % 2 === 0) ? alert('That is an even number') : alert('That is an odd number');
+//         alert('Did you know your number plus one hundred equals ' + (numberAnswer + 100));
+//         (numberAnswer > 0) ? alert('Your number is also a positive number') : alert('Your number is also a negative number');
+//     } else {
+//         alert('That is not a number');
+//     }
+// } else {
+//     alert('Have a great day then!');
+// }
+
+
 // var response = confirm('Would you like to enter a number?');
 //
 // if (response === true) {
@@ -191,16 +202,15 @@ alert('!!!! $' + calculateTotal(luckyNumber, totalBill) + ' !!!!');
 // } else {
 //     alert('Have a great day.');
 // }
+//
+// // ======REFACTORED CODE=======
 
-// ======REFACTORED CODE=======
-function response() {
-    var confirmation = confirm('Would you like to input a number?');
-    if (confirmation === true) {
-        isNumberOrNot();
+function isOddOrEven(number) {
+    (number % 2 === 0) ? alert('This number is even') : alert('This number is odd');
+}
 
-    } else {
-        alert('Have a good day.');
-    }
+function isNegativeOrPositive(number) {
+    (number > 0) ? alert('This is a positive number') : alert('This is a negative number');
 }
 
 function isNumberOrNot() {
@@ -214,12 +224,13 @@ function isNumberOrNot() {
     }
 }
 
-function isOddOrEven(number) {
-    (number % 2 === 0) ? alert('This number is even') : alert('This number is odd');
-}
-
-function isNegativeOrPositive(number) {
-    (number > 0) ? alert('This is a positive number') : alert('This is a negative number');
+function response() {
+    var confirmation = confirm('Would you like to input a number?');
+    if (confirmation === true) {
+        isNumberOrNot();
+    } else {
+        alert('Have a good day.');
+    }
 }
 
 response();
