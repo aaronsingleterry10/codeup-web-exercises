@@ -1,5 +1,7 @@
 "use strict";
 
+(function () {
+
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -92,9 +94,10 @@ console.log(calculateTip(0.15, 33.42), "5.013");
  * then display the dollar amount they should tip
  */
 
-var billDollarAmount = prompt("How much was your bill?");
-var tipDollarAmount = prompt("How much do you want to tip?");
-alert("Your tip should be: " + "$" + calculateTip(billDollarAmount, tipDollarAmount).toFixed(2));
+var billDollarAmount = parseInt(prompt("How much was your bill?"));
+var tipDollarAmount = parseInt(prompt("What percent do you want to tip?"));
+var percentage = tipDollarAmount / 100;
+alert("Your tip should be: " + "$" + calculateTip(billDollarAmount, percentage).toFixed(2));
 
 /**
  * TODO:
@@ -120,3 +123,4 @@ function applyDiscount(price, discount) {
 console.log(applyDiscount(originalPrice, discountPercent), "80");
 console.log(applyDiscount(50, .1), "45");
 
+})();
