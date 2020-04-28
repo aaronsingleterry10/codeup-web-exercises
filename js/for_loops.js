@@ -21,8 +21,8 @@
         }
     }
 
-    for (var x = '1', y = x; x <= '9'; x++, y++) {
-        console.log(x + '' + y);
+    for (var x = 1, y = 1; x <= 9; x++, y++) {
+
     }
 
     for (var num = 100; num >= 5; num = num - 5) {
