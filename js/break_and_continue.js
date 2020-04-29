@@ -3,9 +3,9 @@
 (function () {
 
     while (true) {
-        var numberInput = prompt('Enter a number between 1 and 50');
+        var numberInput = prompt('Enter an odd number between 1 and 50');
 
-        if (numberInput <= 50 && numberInput >= 1 && !isNaN(numberInput)) {
+        if (numberInput <= 50 && numberInput >= 1 && numberInput % 2 !== 0 && !isNaN(numberInput)) {
             oddNumber();
             break;
         } else if (numberInput === '') {
