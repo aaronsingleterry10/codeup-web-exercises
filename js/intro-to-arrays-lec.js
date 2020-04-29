@@ -25,7 +25,8 @@ console.log("Welcome to intro to arrays");
 // Notice that the array above does *not* have 5 elements, rather the last element is itself an array with 3 elements in it
 
 //TODO TOGETHER: Declare an empty array set equal to the variable `pies` - then console.log `pies`
-
+var pies = [];
+console.log(pies);
 
 //TODO TOGETHER: Set the following array equal to `pies` - then console.log `pies`
 // ["apple", "cherry", "key lime", "huckleberry"];
