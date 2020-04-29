@@ -18,7 +18,7 @@
             continue;
         }
         if (parseFloat(numberInput) === i) {
-            continue;    // console.log('Yikes! Skipping number: ' + i);
+             console.log('Yikes! Skipping number: ' + i);
         } else {
             console.log('Here is an odd number: ' + i);
         }
