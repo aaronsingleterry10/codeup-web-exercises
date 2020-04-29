@@ -21,9 +21,10 @@
         }
     }
 
-    for (var x = 1, y = 1; x <= 9; x++, y++) {
-
+    for (var x = 1; x <= 9; x++) {
+         console.log(x.toString().repeat(x));
     }
+
 
     for (var num = 100; num >= 5; num = num - 5) {
         console.log(num);
