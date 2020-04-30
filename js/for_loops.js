@@ -2,19 +2,37 @@
 
 (function () {
 
-    function showMultiplicationTable(num) {
-        var output = ''
-        for (var i = 1; i <= 10; i++) {
-            output = output + num + ' x ' + i + ' = ' + (num * i) + '\n';
+    // function showMultiplicationTable(num) {
+    //     var output = ''
+    //     for (var i = 1; i <= 10; i++) {
+    //         output = output + num + ' x ' + i + ' = ' + (num * i) + '\n';
+    //     }
+    //     return output;
+    // }
+    //
+    // console.log(showMultiplicationTable(7));
+
+    function isOddOrEven(num) {
+        return (num % 2 === 0) ? num + ' is even.' : num + ' is odd';
+    }
+
+    function randomNumberGenerator(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;;
+    }
+
+    function isRandomNumberOddOrEven(num) {
+        var output = '';
+        for (var i = 1; i <= num; i++) {
+          output += isOddOrEven(randomNumberGenerator(20, 200)) + '\n';
         }
         return output;
     }
 
-    console.log(showMultiplicationTable(7));
+    console.log(isRandomNumberOddOrEven(10));
 
     // for (var i = 1; i <= 10; i++) {
     //
-    //     var randomNumber = Math.floor((Math.random() * 200 - 20 + 1) + 20);
+    //     var randomNumber = Math.floor(Math.random() * (200 - 20 + 1)) + 20;
     //
     //     if (randomNumber % 2 === 0) {
     //         console.log(randomNumber + ' is even');
@@ -22,7 +40,7 @@
     //         console.log(randomNumber + ' is odd');
     //     }
     // }
-    //
+
     // for (var x = 1; x <= 9; x++) {
     //      console.log(x.toString().repeat(x));
     // }
