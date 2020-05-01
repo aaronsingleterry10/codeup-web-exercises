@@ -64,12 +64,32 @@
         }
         return output;
     }
-    console.log(numTimesItself(0, 5, 2));
-    // var i = 2;
-    // while (i <= 65536) {
-    //     console.log(i);
-    //     i = i * i;
-    // }
+    console.log(numTimesItself(0, 5, 2), 'while loop');
+
+   // ===Do While===
+    function doWhileNumTimesItself(from, to, num) {
+        var output = '';
+        do {
+            output += num + '\n';
+            num = num * num;
+            from++;
+        } while (from < to)
+        return output;
+    }
+
+    console.log(doWhileNumTimesItself(0, 5, 2), 'do while loop');
+
+    //===For Loop===
+    function forLoopTimesItself(from, to, num) {
+        var output = '';
+        for (var i = from; i < to; i++) {
+            output += num + '\n';
+            num = num * num;
+        }
+        return output;
+    }
+
+    console.log(forLoopTimesItself(0, 5, 2), 'for loop');
 // ---------------
 // 1
 // 2
