@@ -12,7 +12,7 @@
 // 0
 // -2
     //===While Loop===
-    function whileLoop(from, to, subtract) {
+    function subtractFromTo(from, to, subtract) {
         var output = '';
         var i = from;
         while (i >= to) {
@@ -22,10 +22,10 @@
         return output;
     }
 
-    console.log(whileLoop(10, -2, 2), 'while loop');
+    console.log(subtractFromTo(10, -2, 2), 'while loop');
 
     //===Do While Loop===
-    function doWhileLoop(from, to, subtract) {
+    function subtractDoWhileLoop(from, to, subtract) {
         var output = '';
         var i = from;
         do {
@@ -35,7 +35,7 @@
         return output;
     }
 
-    console.log(doWhileLoop(10, -2, 2), 'do while loop');
+    console.log(subtractDoWhileLoop(10, -2, 2), 'do while loop');
 
     //===For Loop===
 
@@ -54,6 +54,22 @@
 // 16
 // 256
 // 65536
+//     ===While Loop===
+    function numTimesItself(from, to, num) {
+        var output = '';
+        while (from < to) {
+            output += num + '\n';
+            num = num * num;
+            from++;
+        }
+        return output;
+    }
+    console.log(numTimesItself(0, 5, 2));
+    // var i = 2;
+    // while (i <= 65536) {
+    //     console.log(i);
+    //     i = i * i;
+    // }
 // ---------------
 // 1
 // 2
