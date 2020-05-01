@@ -97,10 +97,56 @@
 // 4
 // 5
 // 6
+    //===While Loop===
+    function countToNum(num) {
+        var output = '';
+        var i = 1;
+        while (i <= num) {
+            output = output + i + '\n';
+            i++;
+        }
+        return output;
+    }
+
+    console.log(countToNum(6));
+
+    //===Do While Loop===
+    function doWhileCountToNum(num) {
+        var output = '';
+        var i = 1;
+        do {
+            output = output + i + '\n';
+            i++;
+        } while (i <= num)
+        return output;
+    }
+
+    console.log(doWhileCountToNum(6));
+
+    //===For Loop===
+    for (var i = 1; i <= 6; i++) {
+        console.log(i);
+    }
+        // refactored
+    function forLoopCountToNum(num) {
+        var output = '';
+        for (var i = 1; i <= num; i++) {
+            output = output + i + '\n';
+        }
+        return output;
+    }
+
+    console.log(forLoopCountToNum(6));
 // ---------------
 // 105
 // 100
 // 95
+    //===While Loop===
+    console.log(subtractFromTo(105, 95, 5), 'while loop function');
+    //===Do While Loop===
+    console.log(subtractDoWhileLoop(105, 95, 5), 'do while loop function');
+    //===For Loop===
+    console.log(forLoopFromTo(105, 95, 5), 'for loop function');
 // ---------------
 // 1000000
 // 100000
