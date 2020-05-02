@@ -50,19 +50,24 @@
         {name: 'George', amount: 320}
     ];
 
-    function hebShoppers(coupon) {
+    shoppers.forEach(function (element, i) {
+        console.log(element.amount);
+    });
+
+    console.log("For Loop");
+    function hebShoppers(coupon, obj) {
         var output = '';
-        for (var i = 0; i < shoppers.length; i++) {
-            if (totalAmountOverTwoHundred(shoppers[i].amount)) {
-                output += shoppers[i].name + ", " + "You're total amount is: $" + shoppers[i].amount + ". " + "You're discount is: $" + (discount(coupon) * shoppers[i].amount) + ". " + "You're total amount after the discount is: $" + (shoppers[i].amount - (shoppers[i].amount * discount(coupon))) + "\n";
+        for (var i = 0; i < obj.length; i++) {
+            if (totalAmountOverTwoHundred(obj[i].amount)) {
+                output = output + obj[i].name + ", " + "You're total amount is: $" + obj[i].amount.toFixed(2) + ". " + "You're discount is: $" + (discount(coupon) * obj[i].amount).toFixed(2) + ". " + "You're total amount after the discount is: $" + (obj[i].amount - (obj[i].amount * discount(coupon))).toFixed(2) + "\n";
             } else {
-                output += shoppers[i].name + ", " + "You're total amount is: $" + shoppers[i].amount + ". " + "You're purchase is not eligible for discount." + "\n";
+                output = output + obj[i].name + ", " + "You're total amount is: $" + obj[i].amount.toFixed(2) + ". " + "You're purchase is not eligible for discount." + "\n";
             }
         }
         return output;
     }
 
-    console.log(hebShoppers(12));
+    console.log(hebShoppers(12, shoppers));
 
     function totalAmountOverTwoHundred(num) {
         return num > 200;
@@ -70,7 +75,23 @@
     function discount(num) {
         return num / 100;
     }
-    //
+
+    console.log("ForEach Loop");
+
+    function hebShoppersforEach(coupon, obj) {
+        var output = "";
+        obj.forEach(function(element, i) {
+            if (totalAmountOverTwoHundred(element.amount)) {
+                output += element.name + ", " + "You're total amount is: $" + element.amount.toFixed(2) + ". " + "You're discount is: $" + (discount(coupon) * element.amount).toFixed(2) + ". " + "You're total amount after the discount is: $" + (element.amount - (element.amount * discount(coupon))).toFixed(2) + "\n";
+            } else {
+                output += element.name + ", " + "You're total amount is: $" + element.amount.toFixed(2) + ". " + "You're purchase is not eligible for discount." + "\n";
+            }
+        });
+        return output;
+    }
+
+    console.log(hebShoppersforEach(12, shoppers));
+
     // console.log(totalAmountOverTwoHundred(200));
     // console.log(discount(12));
 
@@ -123,6 +144,8 @@
     console.log(books[2].title, "to kill...");
     console.log(books[1].author.firstName, "jane");
     console.log(books[4].author.lastName, "orwell");
+    console.log(books);
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -167,5 +190,31 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook(bookTitle, bookAuthorFirstName, bookAuthorLastName) {
+        var book = [
+            {
+                title: bookTitle,
+                author: {
+                    firstName: bookAuthorFirstName,
+                    lastName: bookAuthorLastName
+                }
+            }
+        ];
+        book = book + book;
+        return book;
+    }
+
+    console.log(createBook("Life of Pi", "Yann", "Martel"));
+    console.log(createBook("Twilight", "Stephanie", "Meyer"));
+
+
+    function showBookInfo(obj) {
+        var bookOutput = "";
+        for (var i = 0; i < obj.length; i++) {
+            bookOutput += "Book # " + (i + 1) + "\n" + "Title: " + obj[i].title + "\n" + "Author: " + obj[i].author.firstName + obj[i].author.lastName + "\n" + "---" + "\n";
+        }
+        return bookOutput;
+    }
+    console.log(showBookInfo(books));
 
 })();
