@@ -11,7 +11,12 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+        var person = {
+            firstName: "Rick",
+            lastName: "Sanchez"
+        }
+        console.log(person.firstName);
+        console.log(person.lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,7 +26,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+        person.sayHello = function() {
+            return 'Hello from ' + person.firstName + ' ' + person.lastName + '!';
+        }
+        console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -36,11 +44,36 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    function hebShoppers(coupon) {
+        var output = '';
+        for (var i = 0; i < shoppers.length; i++) {
+            if (totalAmountOverTwoHundred(shoppers[i].amount)) {
+                output += shoppers[i].name + ", " + "You're total amount is: $" + shoppers[i].amount + ". " + "You're discount is: $" + (discount(coupon) * shoppers[i].amount) + ". " + "You're total amount after the discount is: $" + (shoppers[i].amount - (shoppers[i].amount * discount(coupon))) + "\n";
+            } else {
+                output += shoppers[i].name + ", " + "You're total amount is: $" + shoppers[i].amount + ". " + "You're purchase is not eligible for discount." + "\n";
+            }
+        }
+        return output;
+    }
+
+    console.log(hebShoppers(12));
+
+    function totalAmountOverTwoHundred(num) {
+        return num > 200;
+    }
+    function discount(num) {
+        return num / 100;
+    }
+    //
+    // console.log(totalAmountOverTwoHundred(200));
+    // console.log(discount(12));
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
