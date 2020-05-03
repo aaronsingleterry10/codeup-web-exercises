@@ -50,10 +50,6 @@
         {name: 'George', amount: 320}
     ];
 
-    shoppers.forEach(function (element, i) {
-        console.log(element.amount);
-    });
-
     console.log("For Loop");
     function hebShoppers(coupon, obj) {
         var output = '';
@@ -108,43 +104,50 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    // var books = [
+    //     {
+    //         title: "Harry Potter and the Half-Blood Prince",
+    //         author: {
+    //             firstName: "J. K.",
+    //             lastName: "Rowling"
+    //         }
+    //     }, {
+    //         title: "Pride and Prejudice",
+    //         author: {
+    //             firstName: "Jane",
+    //             lastName: "Austen"
+    //         }
+    //     }, {
+    //         title: "To Kill a Mockingbird",
+    //         author: {
+    //             firstName: "Harper",
+    //             lastName: "Lee"
+    //         }
+    //     }, {
+    //         title: "The Hunger Games",
+    //         author: {
+    //             firstName: "Suzanne",
+    //             lastName: "Collins"
+    //         }
+    //     }, {
+    //         title: "1984",
+    //         author: {
+    //             firstName: "George",
+    //             lastName: "Orwell"
+    //         }
+    //     }
+    // ];
     var books = [
-        {
-            title: "Harry Potter and the Half-Blood Prince",
-            author: {
-                firstName: "J. K.",
-                lastName: "Rowling"
-            }
-        }, {
-            title: "Pride and Prejudice",
-            author: {
-                firstName: "Jane",
-                lastName: "Austen"
-            }
-        }, {
-            title: "To Kill a Mockingbird",
-            author: {
-                firstName: "Harper",
-                lastName: "Lee"
-            }
-        }, {
-            title: "The Hunger Games",
-            author: {
-                firstName: "Suzanne",
-                lastName: "Collins"
-            }
-        }, {
-            title: "1984",
-            author: {
-                firstName: "George",
-                lastName: "Orwell"
-            }
-        }
-    ];
+        createBook("Harry Potter and the Half-Blood Prince", "J. K.", "Rowling"),
+        createBook("Pride and Prejudice", "Jane", "Austen"),
+        createBook("To Kill a Mockingbird", "Harper", "Lee"),
+        createBook("The Hunger Games", "Suzanne", "Collins"),
+        createBook("1984", "George", "Orwell")
+        ];
+    console.log(books);
     console.log(books[2].title, "to kill...");
     console.log(books[1].author.firstName, "jane");
     console.log(books[4].author.lastName, "orwell");
-    console.log(books);
 
     /**
      * TODO:
@@ -170,16 +173,16 @@
      *      ---
      *      ...
      */
-    function bookInfo() {
+    function bookInfo(obj) {
         var bookOutput = "";
 
-        books.forEach(function(book, i) {
-            bookOutput += "Book # " + (i + 1) + "\n" + "Title: " + books[i].title + "\n" + "Author: " + books[i].author.firstName + books[i].author.lastName + "\n" + "---" + "\n";
+        obj.forEach(function(book, i) {
+            bookOutput += "Book # " + (i + 1) + "\n" + "Title: " + book.title + "\n" + "Author: " + book.author.firstName + book.author.lastName + "\n" + "---" + "\n";
 
         });
         return bookOutput;
     }
-    console.log(bookInfo());
+    console.log(bookInfo(books));
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -191,22 +194,18 @@
      *   `showBookInfo` function.
      */
     function createBook(bookTitle, bookAuthorFirstName, bookAuthorLastName) {
-        var book = [
+        var book =
             {
                 title: bookTitle,
                 author: {
                     firstName: bookAuthorFirstName,
                     lastName: bookAuthorLastName
                 }
-            }
-        ];
-        book = book + book;
+            };
         return book;
     }
-
     console.log(createBook("Life of Pi", "Yann", "Martel"));
     console.log(createBook("Twilight", "Stephanie", "Meyer"));
-
 
     function showBookInfo(obj) {
         var bookOutput = "";
