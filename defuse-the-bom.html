@@ -23,14 +23,14 @@
         } else if (detonationTimer > 0) {
             document.getElementById('timer').innerHTML = detonationTimer;
         }
-
         detonationTimer--;
     }
+    var timeBom = setInterval(updateTimer, 1000);
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-
+        clearInterval(timeBom);
     }
 
     // Don't modify anything below this line!
