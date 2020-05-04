@@ -155,4 +155,19 @@
 // 100
 // 10
 // 1
+    function numDivideByNum(n1, n2) {
+        return n1 / n2;
+    }
+    //===While Loop===
+    function highToLow(num1, num2) {
+        var output = "";
+
+        while (num1 >= num2) {
+            num1 = numDivideByNum(num1, num2);
+            output = output + num1 + "\n";
+        }
+        return output;
+    }
+
+    console.log(highToLow(10000000, 10));
 })();
