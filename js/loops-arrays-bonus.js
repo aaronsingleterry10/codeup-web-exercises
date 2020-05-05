@@ -2,6 +2,14 @@
 (function() {
     // LOOPS AND ARRAY BONUSES
     // 1. Create a function that returns a random day of the week
+    var daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    function randomNumber(num) {
+        return Math.floor(Math.random() * (num + 1));
+    }
+    function randomDayOfTheWeek(arr, num){
+
+    }
+    // console.log(randomNumber(7));
     // 2. Create a function that takes a single letter and returns what number the letter is in the alphabet. Ignore case.
     // someFunction("a") // returns 1
     // someFunction("z") // returns 26
