@@ -161,15 +161,27 @@
         //     Example output: false
         //     Example input: [5, {'a': 'hello'}, 30, true, null]
         //     Example output: true
-            function arrayLengthMatch(arr) {
-                return arr.indexOf(arr.length) >= 0;
+        //     function arrayLengthMatch(arr) {
+        //         return arr.indexOf(arr.length) >= 0;
+        //     }
+        //     var input2 = [{'a': 'hello'}, 10, true];
+        //     var input = ['bob', 3, false];
+        //     var input3 = [5, {'a': 'hello'}, 30, true, null];
+        //     console.log(arrayLengthMatch(input));
+        //     console.log(arrayLengthMatch(input2));
+        //     console.log(arrayLengthMatch(input3));
+            function powerOfFour(num) {
+                if (!isNaN(num)) {
+                    return Math.pow(num, 4);
+                } else {
+                    return false;
+                }
             }
-            var input2 = [{'a': 'hello'}, 10, true];
-            var input = ['bob', 3, false];
-            var input3 = [5, {'a': 'hello'}, 30, true, null];
-            console.log(arrayLengthMatch(input));
-            console.log(arrayLengthMatch(input2));
-            console.log(arrayLengthMatch(input3));
+
+            console.log(powerOfFour(2));
+            console.log(powerOfFour('bob'));
+            console.log(powerOfFour(5));
+            console.log(powerOfFour("2"));
         })();
 
 
