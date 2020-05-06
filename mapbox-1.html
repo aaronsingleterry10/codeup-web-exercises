@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapbox</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
     <h1>Mapbox</h1>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <script src="js/keys.js"></script>
+    <script>
+        mapboxgl.accessToken = mapBoxKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            zoom: 10,
+            center: [-97.0544, 28.0206]
+        });
+        function unitedStates() {
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/satellite-v9',
+                zoom: 2,
+                center: [-95.7129, 37.0902]
+            });
+        }
+        setTimeout(unitedStates, 5000);
+    </script>
 
 </body>
 </html>
