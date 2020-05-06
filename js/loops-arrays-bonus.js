@@ -10,10 +10,18 @@
     }
     console.log(randomDayOfTheWeek());
 
-    // console.log(randomNumber(7));
     // 2. Create a function that takes a single letter and returns what number the letter is in the alphabet. Ignore case.
     // someFunction("a") // returns 1
     // someFunction("z") // returns 26
+    function numberInAlphabet(input) {
+        var alplabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        return alplabet.indexOf(input) + 1;
+    }
+
+    console.log(numberInAlphabet("a"));
+    console.log(numberInAlphabet("z"));
+    console.log(numberInAlphabet("b"));
+
     // 3. Create a function that returns the longest string in a given array of string elements.
     // 4. Create a function that takes in two arrays of elements, including numbers. If all numbers added together in the first array are equal to all the number inputs added in the second array, return true, otherwise, false. Only add together numeric elements but either array may contain non-numeric elements.
     //     var arr1 = ['bob', 1, true, 1, 2];
