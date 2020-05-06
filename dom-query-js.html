@@ -37,10 +37,16 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
-<div class="btn">1</div>
-<div class="btn">2</div>
-<div class="btn">3</div>
-<div class="btn">4</div>
+<!--<div class="btn">1</div>-->
+<!--<div class="btn">2</div>-->
+<!--<div class="btn">3</div>-->
+<!--<div class="btn">4</div>-->
+<button>Click to see a change in the main title</button>
+<button>Click to see "Hello Again" with a blue color</button>
+<button>Click to see the list change in color</button>
+<button>Click for Mission Accomplished!</button>
+
+
 <script>
     (function() {
         "use strict";
@@ -78,18 +84,15 @@
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         // subParagraphs[0].innerText = "Mission Accomplished!";
 
-        var firstBtn = document.getElementsByClassName("btn")[0];
-        var secondBtn = document.getElementsByClassName("btn")[1];
-        var thirdBtn = document.getElementsByClassName("btn")[2];
-        var fourthBtn = document.getElementsByClassName("btn")[3];
-
-        firstBtn.addEventListener("click", function() {
+        document.getElementsByTagName("button")[0].addEventListener("click", function() {
             mainHeader.innerHTML = "JavaScript is Cool";
         });
-        secondBtn.addEventListener("click", function() {
+
+        document.getElementsByTagName("button")[1].addEventListener("click", function() {
             subHeader.style.color = "blue";
         });
-        thirdBtn.addEventListener("click", function() {
+
+        document.getElementsByTagName("button")[2].addEventListener("click", function() {
             for (var i = 0; i < listItems.length; i++) {
                 if (i % 2 === 0) {
                     listItems[i].style.color = "grey";
@@ -100,9 +103,57 @@
                 }
             }
         });
-        fourthBtn.addEventListener("click", function() {
+
+        document.getElementsByTagName("button")[3].addEventListener("click", function() {
             subParagraphs[0].innerText = "Mission Accomplished!";
         });
+
+        // firstButton.addEventListener("click", function() {
+        //     mainHeader.innerHTML = "JavaScript is Cool";
+        // });
+        // secondButton.addEventListener("click", function() {
+        //     subHeader.style.color = "blue";
+        // });
+        // thirdButton.addEventListener("click", function() {
+        //     for (var i = 0; i < listItems.length; i++) {
+        //         if (i % 2 === 0) {
+        //             listItems[i].style.color = "grey";
+        //         }
+        //         var dbid = listItems[i].getAttribute("data-dbid");
+        //         if (dbid === "1") {
+        //             listItems[i].style.color = "blue";
+        //         }
+        //     }
+        // });
+        // fourthButton.addEventListener("click", function() {
+        //     subParagraphs[0].innerText = "Mission Accomplished!";
+        // });
+
+        // var firstBtn = document.getElementsByClassName("btn")[0];
+        // var secondBtn = document.getElementsByClassName("btn")[1];
+        // var thirdBtn = document.getElementsByClassName("btn")[2];
+        // var fourthBtn = document.getElementsByClassName("btn")[3];
+
+        // firstBtn.addEventListener("click", function() {
+        //     mainHeader.innerHTML = "JavaScript is Cool";
+        // });
+        // secondBtn.addEventListener("click", function() {
+        //     subHeader.style.color = "blue";
+        // });
+        // thirdBtn.addEventListener("click", function() {
+        //     for (var i = 0; i < listItems.length; i++) {
+        //         if (i % 2 === 0) {
+        //             listItems[i].style.color = "grey";
+        //         }
+        //         var dbid = listItems[i].getAttribute("data-dbid");
+        //         if (dbid === "1") {
+        //             listItems[i].style.color = "blue";
+        //         }
+        //     }
+        // });
+        // fourthBtn.addEventListener("click", function() {
+        //     subParagraphs[0].innerText = "Mission Accomplished!";
+        // });
 
     })();
 </script>
