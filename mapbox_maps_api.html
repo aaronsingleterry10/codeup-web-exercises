@@ -26,20 +26,19 @@
             {
                 restaurantName: "Muck & Fuss Craft Beer and Burger Bar",
                 address: "295 E San Antonio St, New Braunfels, TX",
-                info: "Muck and Fuss. Great beer and burgers!"
+                info: "Great beer and burgers!"
             },
             {
                 restaurantName: "Calahan's Pub and Pizza",
                 address: "194 W San Antonio St, New Braunfels, TX",
-                info: "Calahan's Pub and Pizza. Nothing like a good old fashioned pepperoni pizza!"
+                info: "Nothing like a good old fashioned pepperoni pizza!"
             },
             {
                 restaurantName: "Taco Bell",
                 address: "1838 TX-46, New Braunfels, TX",
-                info: "Taco Bell. Not bad for a late night snack."
+                info: "Not bad for a late night snack."
             }
         ];
-
         // geocode("295 E San Antonio St, New Braunfels, TX 78130", mapBoxKey).then(function(result) {
         //     map.setCenter(result);
         //     map.setZoom(12);
@@ -51,15 +50,13 @@
         favoriteRestaurants.forEach(function(element) {
             geocode(element.address, mapBoxKey).then(function(result) {
                 var marker = new mapboxgl.Marker();
-                var popup = new mapboxgl.Popup();
                 marker.setLngLat(result);
                 marker.addTo(map);
-                popup.setHTML(element.info);
+                var popup = new mapboxgl.Popup();
+                popup.setHTML("<h3>" + element.restaurantName + "</h3>" + "<br>" + element.info);
                 marker.setPopup(popup);
             });
         });
-
-
     </script>
 </body>
 </html>
