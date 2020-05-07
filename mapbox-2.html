@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mapbox 2</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
+    <h1>Mapbox 2</h1>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <h1>Coordinates: <span id="coord"></span></h1>
+    <script src="js/keys.js"></script>
+    <script>
+        mapboxgl.accessToken = mapBoxKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            zoom: 10,
+            center: {
+                lng: -77.0369,
+                lat: 38.9072
+            }
+        });
+        var marker = new mapboxgl.Marker();
+        var coords = document.getElementById("coord");
+        marker.setLngLat({lng: -77.0502, lat: 38.8893});
+        marker.addTo(map);
+        // bonus
+        marker.setDraggable(true);
+        marker.on('dragend', function() {
+            coords.innerHTML = marker.getLngLat();
+        });
+        var popup = new mapboxgl.Popup();
+        popup.setHTML('Lincoln Memorial');
+        marker.setPopup(popup);
 
+    </script>
 </body>
 </html>
