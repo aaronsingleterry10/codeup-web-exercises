@@ -2,10 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mapbox Maps API</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
     <h1>Mapbox Maps API</h1>
+    <div id='map' style='width: 100%; height: 500px;'></div>
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-lecture.js"></script>
+    <script>
+        mapboxgl.accessToken = mapBoxKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: {
+                lng: -98.1245,
+                lat: 29.7030
+                },
+            zoom: 12
+        });
+        var favoriteRestaurants = [
+            {
+                restaurantName: "Muck & Fuss Craft Beer and Burger Bar",
+                address: "295 E San Antonio St, New Braunfels, TX",
+                info: "Muck and Fuss. Great beer and burgers!"
+            },
+            {
+                restaurantName: "Calahan's Pub and Pizza",
+                address: "194 W San Antonio St, New Braunfels, TX",
+                info: "Calahan's Pub and Pizza. Nothing like a good old fashioned pepperoni pizza!"
+            },
+            {
+                restaurantName: "Taco Bell",
+                address: "1838 TX-46, New Braunfels, TX",
+                info: "Taco Bell. Not bad for a late night snack."
+            }
+        ];
 
+        // geocode("295 E San Antonio St, New Braunfels, TX 78130", mapBoxKey).then(function(result) {
+        //     map.setCenter(result);
+        //     map.setZoom(12);
+        //     marker.setLngLat(result);
+        //     marker.addTo(map);
+        //     popup.setHTML("Muck & Fuss Craft Beer and Burger Bar");
+        //     marker.setPopup(popup);
+        // });
+        favoriteRestaurants.forEach(function(element) {
+            geocode(element.address, mapBoxKey).then(function(result) {
+                var marker = new mapboxgl.Marker();
+                var popup = new mapboxgl.Popup();
+                marker.setLngLat(result);
+                marker.addTo(map);
+                popup.setHTML(element.info);
+                marker.setPopup(popup);
+            });
+        });
+
+
+    </script>
 </body>
 </html>
