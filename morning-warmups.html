@@ -291,13 +291,16 @@
         //
         //     console.log(firstAndLast(['one', 'two', 'three', 'four']));
         //     console.log(firstAndLast([1, 2, 3, 4]));
-            function firstToLast(array) {
-                array.push(array.shift());
-                return array;
-
+        //
+            function sumOfAll(input) {
+                var sum = input.reduce(function(a, b) {
+                    return a + b;
+                });
+                return sum;
             }
-            var array = [1, 2, 3];
-            console.log(firstToLast(['one', 'two', 'three']));
+
+            console.log(sumOfAll([1, 2, 3]));
+            console.log(sumOfAll([5, 4, 3]));
         })();
 
 
