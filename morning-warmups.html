@@ -329,18 +329,34 @@
             // console.log(productOfAll([2, 2, 2]), 8);
             // console.log(productOfAll([1, 1, 1]), 1);
             // console.log(productOfAll([3, 3, 3]), 27);
-            function getHighestNumber(arr) {
-                return Math.max(...arr);
-            }
-
-            console.log(getHighestNumber([3, 4, 5]), 5);
-            console.log(getHighestNumber([6, 7, 8]), 8);
-            function getLowestNumber(arr) {
-                return Math.min(...arr);
-            }
-
-            console.log(getLowestNumber([2, 3, 4]), 2);
-            console.log(getLowestNumber([5,6,7]), 5);
+            // function getHighestNumber(arr) {
+            //     return Math.max(...arr);
+            // }
+            //
+            // console.log(getHighestNumber([3, 4, 5]), 5);
+            // console.log(getHighestNumber([6, 7, 8]), 8);
+            // function getLowestNumber(arr) {
+            //     return Math.min(...arr);
+            // }
+            //
+            // console.log(getLowestNumber([2, 3, 4]), 2);
+            // console.log(getLowestNumber([5,6,7]), 5);
+                function onlyOddNumbers(arr) {
+                    // var newArr = [];
+                    // for (var i = 0; i < arr.length; i++) {
+                    //     if (arr[i] % 2 !== 0) {
+                    //        newArr.push(arr[i]);
+                    //     }
+                    // }
+                    // return newArr;
+                    var odd = arr.filter(function(num) {
+                        return num % 2 !== 0
+                    });
+                    return odd;
+                }
+                // onlyOddNumbers([1,2,3,4,5,6,7,8,9]);
+            console.log(onlyOddNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+            console.log(onlyOddNumbers([10, 11, 12, 13, 14, 15, 16, 17]));
         })();
 
 
