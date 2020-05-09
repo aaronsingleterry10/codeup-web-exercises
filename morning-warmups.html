@@ -280,12 +280,17 @@
         //     console.log(endsWithVowel('yes'), false);
         //     console.log(endsWithVowel('hello'), true);
             function firstAndSecond(input) {
-               return input.slice(0, 2);
+               return [input[0], input[1]];
             }
 
             console.log(firstAndSecond(['one', 'two', 'three', 'four']));
             console.log(firstAndSecond([1, 2, 3, 4]));
+            function firstAndLast(seq) {
+                return [seq[0], seq[seq.length - 1]];
+            }
 
+            console.log(firstAndLast(['one', 'two', 'three', 'four']));
+            console.log(firstAndLast([1, 2, 3, 4]));
         })();
 
 
