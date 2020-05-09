@@ -262,15 +262,30 @@
         //
         //     console.log(removeVowels('banana'));
         //     console.log(removeVowels('qqqq'));
-            function startsWithVowel(str) {
-                var vowels = 'aeiou';
-                return vowels.indexOf(str[0]) >= 0;
+        //     function startsWithVowel(str) {
+        //         var vowels = 'aeiou';
+        //         return vowels.indexOf(str[0]) >= 0;
+        //     }
+        //
+        //     console.log(startsWithVowel('banana'), false);
+        //     console.log(startsWithVowel('ubuntu'), true);
+        //     console.log(startsWithVowel('apple'), true);
+        //     console.log(startsWithVowel('you'), false);
+        //     function endsWithVowel(str) {
+        //         var vowel = 'aeiou';
+        //         return vowel.indexOf(str[str.length - 1]) >= 0;
+        //     }
+        //
+        //     console.log(endsWithVowel('banana'), true);
+        //     console.log(endsWithVowel('yes'), false);
+        //     console.log(endsWithVowel('hello'), true);
+            function firstAndSecond(input) {
+               return input.slice(0, 2);
             }
 
-            console.log(startsWithVowel('banana'), false);
-            console.log(startsWithVowel('ubuntu'), true);
-            console.log(startsWithVowel('apple'), true);
-            console.log(startsWithVowel('you'), false);
+            console.log(firstAndSecond(['one', 'two', 'three', 'four']));
+            console.log(firstAndSecond([1, 2, 3, 4]));
+
         })();
 
 
