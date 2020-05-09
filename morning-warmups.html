@@ -222,45 +222,55 @@
         //     assert(isVowel("Q"), false, "Exercise 43");
         //     assert(isVowel("y"), false, "Exercise 43");
         //     addToDone("Exercise 43 is correct.");
-            function hasVowels(input) {
-                input = input.toLowerCase();
-                return input.indexOf('a') >= 0 || input.indexOf('e') >= 0 || input.indexOf('i') >= 0 || input.indexOf('o') >= 0 || input.indexOf('u') >= 0;
+        //     function hasVowels(input) {
+        //         input = input.toLowerCase();
+        //         return input.indexOf('a') >= 0 || input.indexOf('e') >= 0 || input.indexOf('i') >= 0 || input.indexOf('o') >= 0 || input.indexOf('u') >= 0;
+        //     }
+        //
+        //     console.log(hasVowels('a'), true);
+        //     console.log(hasVowels('U'), true);
+        //     console.log(hasVowels('banana'), true);
+        //     console.log(hasVowels('ubuntu'), true);
+        //     console.log(hasVowels('q'), false);
+        //
+        //     function countVowels(input) {
+        //         input = input.toLowerCase();
+        //         var vowels = ['a', 'e', 'i', 'o', 'u'];
+        //         var count = 0;
+        //         for (var i = 0; i < input.length; i++) {
+        //             if (vowels.indexOf(input[i]) >= 0) {
+        //                 console.log(input[i]);
+        //                 count = count + 1;
+        //             }
+        //         }
+        //         return count;
+        //     }
+        //
+        //     console.log(countVowels('banana'), 3);
+        //     console.log(countVowels('hello'), 2);
+        //
+        //     function removeVowels(input) {
+        //         var output = '';
+        //         var vowels = ['a', 'e', 'i', 'o', 'u'];
+        //         for (var i = 0; i < input.length; i++) {
+        //             if (vowels.indexOf(input[i]) < 0) {
+        //                 output += input[i];
+        //             }
+        //         }
+        //         return output;
+        //     }
+        //
+        //     console.log(removeVowels('banana'));
+        //     console.log(removeVowels('qqqq'));
+            function startsWithVowel(str) {
+                var vowels = 'aeiou';
+                return vowels.indexOf(str[0]) >= 0;
             }
 
-            console.log(hasVowels('a'), true);
-            console.log(hasVowels('U'), true);
-            console.log(hasVowels('banana'), true);
-            console.log(hasVowels('ubuntu'), true);
-            console.log(hasVowels('q'), false);
-
-            function countVowels(input) {
-                input = input.toLowerCase();
-                var vowels = ['a', 'e', 'i', 'o', 'u'];
-                var count = 0;
-                for (var i = 0; i < input.length; i++) {
-                    if (vowels.indexOf(input[i]) >= 0) {
-                        console.log(input[i]);
-                        count = count + 1;
-                    }
-                }
-                return count;
-            }
-
-            console.log(countVowels('banana'), 3);
-            console.log(countVowels('hello'), 2);
-
-            function removeVowels(input) {
-                var output = '';
-                var vowels = ['a', 'e', 'i', 'o', 'u'];
-                for (var i = 0; i < input.length; i++) {
-                    if (vowels.indexOf(input[i]) < 0) {
-                        output += input[i];
-                    }
-                }
-                return output;
-            }
-
-            console.log(removeVowels('banana'));
+            console.log(startsWithVowel('banana'), false);
+            console.log(startsWithVowel('ubuntu'), true);
+            console.log(startsWithVowel('apple'), true);
+            console.log(startsWithVowel('you'), false);
         })();
 
 
