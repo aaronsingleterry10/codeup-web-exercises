@@ -239,6 +239,7 @@
                 var count = 0;
                 for (var i = 0; i < input.length; i++) {
                     if (vowels.indexOf(input[i]) >= 0) {
+                        console.log(input[i]);
                         count = count + 1;
                     }
                 }
@@ -246,6 +247,20 @@
             }
 
             console.log(countVowels('banana'), 3);
+            console.log(countVowels('hello'), 2);
+
+            function removeVowels(input) {
+                var output = '';
+                var vowels = ['a', 'e', 'i', 'o', 'u'];
+                for (var i = 0; i < input.length; i++) {
+                    if (vowels.indexOf(input[i]) < 0) {
+                        output += input[i];
+                    }
+                }
+                return output;
+            }
+
+            console.log(removeVowels('banana'));
         })();
 
 
