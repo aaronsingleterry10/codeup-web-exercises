@@ -314,15 +314,21 @@
         //     console.log(maxMinusMin([6, 7, 8, 9]), 3);
         //     console.log(maxMinusMin([2, 3, 4]), 2);
             function productOfAll(arr) {
-                var output = arr.reduce(function(a, b) {
-                    return a * b;
-                });
+                // var output = arr.reduce(function(a, b) {
+                //     return a * b;
+                // });
+                // return output;
+                var output = 1
+                for (var i = 0; i < arr.length; i++) {
+                    output = output * arr[i];
+                }
                 return output;
             }
+            // console.log(productOfAll([1, 2, 3, 4]));
 
-            console.log(productOfAll([2, 2, 2]), 8);
-            console.log(productOfAll([1, 1, 1]), 1);
-            console.log(productOfAll([3, 3, 3]), 27);
+            // console.log(productOfAll([2, 2, 2]), 8);
+            // console.log(productOfAll([1, 1, 1]), 1);
+            // console.log(productOfAll([3, 3, 3]), 27);
         })();
 
 
