@@ -199,10 +199,53 @@
         //         console.log('Here is a lovely even number: ' + i);
         //     }
         //     document.getElementById()
-            var isColdOutside = true;
+        //     var isColdOutside = true;
+        //
+        //     var clothingToWear = isColdOutside ? 'sweater and a jacket' : 'shorts and a t-shirt';
+        //     console.log(clothingToWear);
 
-            var clothingToWear = isColdOutside ? 'sweater and a jacket' : 'shorts and a t-shirt';
-            console.log(clothingToWear);
+        //     Write a function definition named isVowel that takes in value and returns true if the value is a, e, i, o, u in upper or lower case.
+
+            // function isVowel(input) {
+            //     input = input.toLowerCase();
+            //     return input === 'a' || input === 'e' || input === 'i' || input === 'o' || input === 'u';
+            // }
+            //
+            // console.log(isVowel('a'), true);
+            // console.log(isVowel('U'), true);
+            // console.log(isVowel('banana'), false);
+            // console.log(isVowel('q'));
+
+            //     ssert(isVowel("a"), true, "Exercise 43");
+        //     assert(isVowel("U"), true, "Exercise 43");
+        //     assert(isVowel("banana"), false, "Exercise 43");
+        //     assert(isVowel("Q"), false, "Exercise 43");
+        //     assert(isVowel("y"), false, "Exercise 43");
+        //     addToDone("Exercise 43 is correct.");
+            function hasVowels(input) {
+                input = input.toLowerCase();
+                return input.indexOf('a') >= 0 || input.indexOf('e') >= 0 || input.indexOf('i') >= 0 || input.indexOf('o') >= 0 || input.indexOf('u') >= 0;
+            }
+
+            console.log(hasVowels('a'), true);
+            console.log(hasVowels('U'), true);
+            console.log(hasVowels('banana'), true);
+            console.log(hasVowels('ubuntu'), true);
+            console.log(hasVowels('q'), false);
+
+            function countVowels(input) {
+                input = input.toLowerCase();
+                var vowels = ['a', 'e', 'i', 'o', 'u'];
+                var count = 0;
+                for (var i = 0; i < input.length; i++) {
+                    if (vowels.indexOf(input[i]) >= 0) {
+                        count = count + 1;
+                    }
+                }
+                return count;
+            }
+
+            console.log(countVowels('banana'), 3);
         })();
 
 
