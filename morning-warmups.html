@@ -292,21 +292,27 @@
         //     console.log(firstAndLast(['one', 'two', 'three', 'four']));
         //     console.log(firstAndLast([1, 2, 3, 4]));
         //
-            function sumOfAll(input) {
-                var sum = input.reduce(function(a, b) {
-                    return a + b;
-                });
-                return sum;
+        //     function sumOfAll(input) {
+        //         var sum = input.reduce(function(a, b) {
+        //             return a + b;
+        //         });
+        //         return sum;
+        //     }
+        //
+        //     console.log(sumOfAll([1, 2, 3]));
+        //     console.log(sumOfAll([5, 4, 3]));
+        //
+        //     function mean(input) {
+        //         return sumOfAll(input) / input.length;
+        //     }
+        //
+        //     console.log(mean([3, 3, 3]));
+            function maxMinusMin(arr) {
+                return Math.max(...arr) - Math.min(...arr);
             }
 
-            console.log(sumOfAll([1, 2, 3]));
-            console.log(sumOfAll([5, 4, 3]));
-
-            function mean(input) {
-                return sumOfAll(input) / input.length;
-            }
-
-            console.log(mean([3, 3, 3]));
+            console.log(maxMinusMin([6, 7, 8, 9]), 3);
+            console.log(maxMinusMin([2, 3, 4]), 2);
         })();
 
 
