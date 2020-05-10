@@ -65,4 +65,57 @@
     console.log(addOne(5), 6);
     console.log(addOne(10), 11);
 
+    // Exercise 12
+// Write a function definition named isPositive that takes in a number and returns true or false if that number is positive.
+    function isPositive(num) {
+        return num > 0;
+    }
+
+    console.log(isPositive(3), true);
+    console.log(isPositive(-2), false);
+
+    // Exercise 13
+// Write a function definition named isNegative that takes in a number and returns true or False if that number is negative.
+    function isNegative(num) {
+        return num < 0;
+    }
+
+    console.log(isNegative(-4), true);
+    console.log(isNegative(3), false);
+
+    // Exercise 14
+// Write a function definition named isOdd that takes in a number and returns true or false if that number is odd.
+    function isOdd(num) {
+        return num % 2 !== 0;
+    }
+
+    console.log(isOdd(3), true);
+    console.log(isOdd(24), false);
+
+    // Exercise 15
+// Write a function definition named isEven that takes in a number and returns true or false if that number is even.
+    function isEven(num) {
+        return !isOdd(num);
+    }
+
+    console.log(isEven(4), true);
+    console.log(isEven(3), false);
+
+    // Exercise 16
+// Write a function definition named identity that takes in any input and returns that input. Don't overthink this one!
+    function identity(input) {
+        return input;
+    }
+
+    // Exercise 17
+// Write a function definition named isPositiveOdd that takes in a number and returns true or false if the value is both greater than zero and odd
+    function isPositiveOdd(num) {
+        return isPositive(num) && isOdd(num);
+    }
+
+    console.log(isPositiveOdd(4), false);
+    console.log(isPositiveOdd(3), true);
+    console.log(isPositiveOdd(-3), false);
+    console.log(isPositiveOdd(7), true);
+
 })();
