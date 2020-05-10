@@ -31,4 +31,38 @@
 // Recommend using the built-in JS operation to add to an array.
     vegetables.push("tomato");
     console.log(vegetables);
+
+    // Exercise 7
+// Given the array of numbers defined below, reverse the array of numbers that you created above.
+    numbers.reverse();
+    console.log(numbers);
+
+    // Exercise 8
+// Sort the vegetables in alphabetical order. Recommend finding a way to sort the array with a built-in method
+    vegetables.sort();
+    console.log(vegetables);
+
+    // Exercise 9
+// Write the code necessary to sort the fruits in reverse alphabetical order
+    fruits.sort();
+    fruits.reverse();
+    console.log(fruits);
+
+    // Exercise 10
+// Write the code necessary to produce a single array that holds all fruits then all vegetables in the order as they were sorted above.
+// Assign the result to a variable named fruitsAndVeggies.
+// *hint* the search engine search here would be "how to combine two arrays in JavaScript", for example.
+    var fruitsAndVeggies = fruits.concat(vegetables);
+    console.log(fruitsAndVeggies);
+
+    // Exercise 11
+// Write a function definition for a function named addOne that takes in a number and returns that number plus one
+    function addOne(num) {
+        return num + 1;
+    }
+
+    console.log(addOne(2), 3);
+    console.log(addOne(5), 6);
+    console.log(addOne(10), 11);
+
 })();
