@@ -177,5 +177,39 @@
         return output;
     }
     // firstLettersOfStringProps(props);
-    console.log(firstLettersOfStringProps(props));
+    // console.log(firstLettersOfStringProps(props));
+
+//  Problem #7
+
+    var userData = [
+        {
+            name: "Fred Smith",
+            favColor: "Blue",
+            age: 25
+        },
+        {
+            name: "Sally Smith",
+            favPet: "Dogs",
+            isAdmin: true,
+            age: 37
+        },
+        {
+            phoneNumber: "5552759898",
+            name: "Karen Smith",
+            age: 19
+        }
+    ]
+
+    function returnBasicUserData(obj) {
+        var output = [];
+        for (var i = 0; i < obj.length; i++) {
+            output.push({
+                name: obj[i].name,
+                age: obj[i].age
+            });
+        }
+        return output;
+    }
+
+    console.log(returnBasicUserData(userData));
 })();
