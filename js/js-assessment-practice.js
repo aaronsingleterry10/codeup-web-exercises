@@ -83,6 +83,18 @@
         }
     ];
 
+    function adminListCount(obj) {
+        var count = 0;
+        for (var i = 0; i < obj.length; i++) {
+            if (obj[i].isAdmin) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+    console.log(adminListCount(admins), 2);
+
     function adminList(obj) {
         var newObj = [];
         for (var i = 0; i < obj.length; i++) {
@@ -95,5 +107,16 @@
 
     console.log(adminList(admins));
 
+    function listOfAdmins(obj) {
+        var list = [];
+        for (var i = 0; i < obj.length; i++) {
+            if (obj[i].isAdmin) {
+                list.push(obj[i]);
+            }
+        }
+        return list;
+    }
+
+    console.log(listOfAdmins(admins));
 
 })();
