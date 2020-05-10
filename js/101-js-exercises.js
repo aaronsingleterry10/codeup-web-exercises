@@ -118,4 +118,20 @@
     console.log(isPositiveOdd(-3), false);
     console.log(isPositiveOdd(7), true);
 
+    // Exercise 18
+// Write a function definition named isPositiveEven that takes in a number and returns true or false if the value is both greater than zero and even
+    function isPositiveEven(num) {
+        return isPositive(num) && isEven(num);
+    }
+
+    console.log(isPositiveEven(44), true);
+    console.log(isPositiveEven(33), false);
+    console.log(isPositiveEven(-2), false);
+
+    // Exercise 19
+// Write a function definition named isNegativeOdd that takes in a number and returns true or false if the value is both less than zero and odd.
+    function isNegativeOdd(num) {
+        return isNegative(num) && isOdd(num);
+    }
+
 })();
