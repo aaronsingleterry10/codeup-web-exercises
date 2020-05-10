@@ -341,34 +341,72 @@
             //
             // console.log(getLowestNumber([2, 3, 4]), 2);
             // console.log(getLowestNumber([5,6,7]), 5);
-                function onlyOddNumbers(arr) {
-                    // var newArr = [];
-                    // for (var i = 0; i < arr.length; i++) {
-                    //     if (arr[i] % 2 !== 0) {
-                    //        newArr.push(arr[i]);
-                    //     }
-                    // }
-                    // return newArr;
-                    var odd = arr.filter(function(num) {
-                        return num % 2 !== 0
-                    });
-                    return odd;
-                }
+            //     function onlyOddNumbers(arr) {
+            //         // var newArr = [];
+            //         // for (var i = 0; i < arr.length; i++) {
+            //         //     if (arr[i] % 2 !== 0) {
+            //         //        newArr.push(arr[i]);
+            //         //     }
+            //         // }
+            //         // return newArr;
+            //         var odd = arr.filter(function(num) {
+            //             return num % 2 !== 0
+            //         });
+            //         return odd;
+            //     }
                 // onlyOddNumbers([1,2,3,4,5,6,7,8,9]);
             // console.log(onlyOddNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9]));
             // console.log(onlyOddNumbers([10, 11, 12, 13, 14, 15, 16, 17]));
 
-            function onlyPositiveNumbers(arr) {
-                var output = [];
-                for (var i = 0; i < arr.length; i++) {
-                    if (arr[i] > 0) {
-                        output.push(arr[i]);
+            // function onlyPositiveNumbers(arr) {
+            //     var output = [];
+            //     for (var i = 0; i < arr.length; i++) {
+            //         if (arr[i] > 0) {
+            //             output.push(arr[i]);
+            //         }
+            //     }
+            //     return output;
+            // }
+            //
+            // console.log(onlyPositiveNumbers([-3, -2, -1, 1, 2, 3]));
+            // function filterNumbers(arr) {
+            //     var output = [];
+            //     for (var i = 0; i < arr.length; i++) {
+            //         if (!isNaN(arr[i]) && typeof arr[i] === 'number') {
+            //             output.push(arr[i]);
+            //         }
+            //     }
+            //     return output;
+            // }
+            //
+            // console.log(filterNumbers([1, 'bob', 2, true]));
+            // console.log(filterNumbers(['fred', true, false, 2, 3]));
+                var dogs = [
+                    {
+                        name: "Chompers",
+                        breed: "Pug",
+                        age: 7
+                    },
+                    {
+                        name: "Freddy",
+                        breed: "Lab",
+                        age: 4
+                    },
+                    {
+                        name: "Mr. Pig",
+                        breed: "Mastif",
+                        age: 10
                     }
+                ];
+
+            function getOlder(obj) {
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].age += 1;
                 }
-                return output;
+                return obj;
             }
 
-            console.log(onlyPositiveNumbers([-3, -2, -1, 1, 2, 3]));
+            console.log(getOlder(dogs));;
         })();
 
 
