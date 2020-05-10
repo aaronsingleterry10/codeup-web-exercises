@@ -119,4 +119,45 @@
 
     console.log(listOfAdmins(admins));
 
+// Problem #5
+
+    var breads = ["white", "wheat", "rhy", "white"];
+
+    var fillings = [
+        "pb&j",
+        "ham",
+        "cheese steak",
+        "tuna"
+    ];
+
+    function makeSandwhichObjects(sandwichBread, sandwichFilling) {
+        var output = [
+            // {
+            //     bread: sandwichBread[0],
+            //     filling: sandwichFilling[0]
+            // },
+            // {
+            //     bread: sandwichBread[1],
+            //     filling: sandwichFilling[1]
+            // },
+            // {
+            //     bread: sandwichBread[2],
+            //     filling: sandwichFilling[2]
+            // },
+            // {
+            //     bread: sandwichBread[3],
+            //     filling: sandwichFilling[3]
+            // }
+        ];
+        for (var i = 0; i < sandwichBread.length; i++) {
+            output.push({
+                bread: sandwichBread[i],
+                filling: sandwichFilling[i]
+            })
+        }
+        return output;
+    }
+
+    console.log(makeSandwhichObjects(breads, fillings));
+
 })();
