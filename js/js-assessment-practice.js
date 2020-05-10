@@ -93,7 +93,7 @@
         return count;
     }
 
-    console.log(adminListCount(admins), 2);
+    // console.log(adminListCount(admins), 2);
 
     function adminList(obj) {
         var newObj = [];
@@ -105,7 +105,7 @@
         return newObj;
     }
 
-    console.log(adminList(admins));
+    // console.log(adminList(admins));
 
     function listOfAdmins(obj) {
         var list = [];
@@ -117,7 +117,7 @@
         return list;
     }
 
-    console.log(listOfAdmins(admins));
+    // console.log(listOfAdmins(admins));
 
 // Problem #5
 
@@ -153,11 +153,29 @@
             output.push({
                 bread: sandwichBread[i],
                 filling: sandwichFilling[i]
-            })
+            });
         }
         return output;
     }
 
-    console.log(makeSandwhichObjects(breads, fillings));
+    // console.log(makeSandwhichObjects(breads, fillings));
 
+//  Problem #6
+
+    var props = {
+        propA: true,
+        propB: "hello",
+        propC: 23,
+        propD: "world"
+    };
+    console.log(props.propB[0]);
+
+    function firstLettersOfStringProps(obj) {
+        var output = [];
+        output.push(obj.propB[0]);
+        output.push(obj.propD[0])
+        return output;
+    }
+    // firstLettersOfStringProps(props);
+    console.log(firstLettersOfStringProps(props));
 })();
