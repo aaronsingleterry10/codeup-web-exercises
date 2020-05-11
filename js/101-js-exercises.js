@@ -134,20 +134,33 @@
     }
 
     var array = ['tomato', 'apple', 'banana', 'tomato', 'orange', 'apple'];
-    function getUniqueValues(arr) {
+    // console.log(array.splice(2, 1));
 
-        var newArr = [];
+    function getUniqueValues(arr) {
         for (var i = 0; i < arr.length; i++) {
             if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
-                arr.splice(arr.lastIndexOf(arr[i]));
-            } else {
-                newArr.push[arr[i]];
+                arr.splice(arr.indexOf(arr[i]), 1);
             }
         }
-        return newArr;
+        return arr;
     }
 
+   var abc = ['a', 'b', 'a', 'c', 'a', 'b', 'b', 'c'];
+
     console.log(getUniqueValues(array));
+    console.log(getUniqueValues(["ant", "ant", "mosquito", "mosquito", "ladybug"]), 'ant mosquito ladybug');
+    console.log(getUniqueValues(["b", "a", "n", "a", "n", "a", "s"]), 'b a n s');
+    console.log(getUniqueValues([
+        "mary",
+        "had",
+        "a",
+        "little",
+        "lamb",
+        "little",
+        "lamb",
+        "little",
+        "lamb"
+    ]));
 
 
 })();
