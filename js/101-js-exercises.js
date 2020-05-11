@@ -25,7 +25,6 @@
 // *Hint* Recommend finding and using a built-in JS operation to add to an array rather than recreating the array.
     fruits.push("tomato");
     console.log(fruits);
-
     // Exercise 6
 // add the string "tomato" onto the end of the vegetables array.
 // Recommend using the built-in JS operation to add to an array.
@@ -133,5 +132,22 @@
     function isNegativeOdd(num) {
         return isNegative(num) && isOdd(num);
     }
+
+    var array = ['tomato', 'apple', 'banana', 'tomato', 'orange', 'apple'];
+    function getUniqueValues(arr) {
+
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
+                arr.splice(arr.lastIndexOf(arr[i]));
+            } else {
+                newArr.push[arr[i]];
+            }
+        }
+        return newArr;
+    }
+
+    console.log(getUniqueValues(array));
+
 
 })();
