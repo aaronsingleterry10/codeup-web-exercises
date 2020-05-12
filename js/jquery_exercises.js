@@ -1,7 +1,10 @@
 "use strict";
 (function() {
     $(document).ready(function() {
-        alert("The DOM has finished loading");
+
+        $('li').css('font-size', '20px');
+        $('h1, p, li');
+        alert($('h1'));
 
     });
 })();
