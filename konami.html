@@ -2,9 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Konami</title>
+    <style>
+        /*body {*/
+        /*    background-image: url("img/80s.gif");*/
+        /*}*/
+        #video {
+            width: 600px;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+
+        }
+    </style>
 </head>
 <body>
+    <h1>Konami Code</h1>
+    <div id="video">just a div</div>
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+        "use strict";
+
+        var bucket = [];
+        $(document).keyup(function(e){
+            console.log(e.key);
+            bucket.push(e.key);
+            console.log(bucket);
+            if (abcMatch(bucket)) {
+                $('#video').html('Wait.....').css('font-size', '30px');
+            }
+            if (abcdMatch(bucket)) {
+                $('#video').html('Wait.....what are doing??').css('font-size', '30px');
+            }
+            if (abcdeMatch(bucket)) {
+                $('#video').html('NOOOOOOOOOOOOOOOO!!!!!!!').css({
+                    'font-size': '30px',
+                    'font-weight': 'bold'
+                });
+            }
+            if (abcdefMatch(bucket)) {
+                $('body').css('background-image', 'url("img/80s.gif")');
+                $('#video').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp;start=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+            }
+        });
+        function abcMatch(arr) {
+            var letterBucket = ['a', 'b', 'c'];
+            return (arr.indexOf(arr[0]) === letterBucket.indexOf(letterBucket[0]) &&
+                arr.indexOf(arr[1]) === letterBucket.indexOf(letterBucket[1]) &&
+                arr.indexOf(arr[2]) === letterBucket.indexOf(letterBucket[2])
+            );
+        }
+        function abcdMatch(arr) {
+            var letterBucket = ['a', 'b', 'c', 'd'];
+            return (arr.indexOf(arr[0]) === letterBucket.indexOf(letterBucket[0]) &&
+                arr.indexOf(arr[1]) === letterBucket.indexOf(letterBucket[1]) &&
+                arr.indexOf(arr[2]) === letterBucket.indexOf(letterBucket[2]) &&
+                arr.indexOf(arr[3]) === letterBucket.indexOf(letterBucket[3])
+            );
+        }
+        function abcdeMatch(arr) {
+            var letterBucket = ['a', 'b', 'c', 'd', 'e'];
+            return (arr.indexOf(arr[0]) === letterBucket.indexOf(letterBucket[0]) &&
+                arr.indexOf(arr[1]) === letterBucket.indexOf(letterBucket[1]) &&
+                arr.indexOf(arr[2]) === letterBucket.indexOf(letterBucket[2]) &&
+                arr.indexOf(arr[3]) === letterBucket.indexOf(letterBucket[3]) &&
+                arr.indexOf(arr[4]) === letterBucket.indexOf(letterBucket[4])
+            );
+        }
+        function abcdefMatch(arr) {
+            var letterBucket = ['a', 'b', 'c', 'd', 'e', 'f'];
+            return (arr.indexOf(arr[0]) === letterBucket.indexOf(letterBucket[0]) &&
+                arr.indexOf(arr[1]) === letterBucket.indexOf(letterBucket[1]) &&
+                arr.indexOf(arr[2]) === letterBucket.indexOf(letterBucket[2]) &&
+                arr.indexOf(arr[3]) === letterBucket.indexOf(letterBucket[3]) &&
+                arr.indexOf(arr[4]) === letterBucket.indexOf(letterBucket[4]) &&
+                arr.indexOf(arr[5]) === letterBucket.indexOf(letterBucket[5])
+            );
+        }
+
+
+
+
+    </script>
 
 </body>
 </html>
