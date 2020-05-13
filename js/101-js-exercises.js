@@ -136,31 +136,74 @@
     var array = ['tomato', 'apple', 'banana', 'tomato', 'orange', 'apple'];
     // console.log(array.splice(2, 1));
 
-    function getUniqueValues(arr) {
-        for (var i = 0; i < arr.length; i++) {
-            if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
-                arr.splice(arr.indexOf(arr[i]), 1);
+   //  function getUniqueValues(arr) {
+   //      for (var i = 0; i < arr.length; i++) {
+   //          if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
+   //              arr.splice(arr.indexOf(arr[i]), 1);
+   //          }
+   //      }
+   //      return arr;
+   //  }
+   //
+   // var abc = ['a', 'b', 'a', 'c', 'a', 'b', 'b', 'c'];
+   //
+   //  console.log(getUniqueValues(array));
+   //  console.log(getUniqueValues(["ant", "ant", "mosquito", "mosquito", "ladybug"]), 'ant mosquito ladybug');
+   //  console.log(getUniqueValues(["b", "a", "n", "a", "n", "a", "s"]), 'b a n s');
+   //  console.log(getUniqueValues([
+   //      "mary",
+   //      "had",
+   //      "a",
+   //      "little",
+   //      "lamb",
+   //      "little",
+   //      "lamb",
+   //      "little",
+   //      "lamb"
+   //  ]));
+    const shoppingCart = {
+        tax: 0.08,
+        items: [
+            {
+                title: "orange juice",
+                price: 3.99,
+                quantity: 1
+            },
+            {
+                title: "rice",
+                price: 1.99,
+                quantity: 3
+            },
+            {
+                title: "beans",
+                price: 0.99,
+                quantity: 3
+            },
+            {
+                title: "chili sauce",
+                price: 2.99,
+                quantity: 1
+            },
+            {
+                title: "chocolate",
+                price: 0.75,
+                quantity: 9
             }
-        }
-        return arr;
-    }
+        ]
+    };
 
-   var abc = ['a', 'b', 'a', 'c', 'a', 'b', 'b', 'c'];
 
-    console.log(getUniqueValues(array));
-    console.log(getUniqueValues(["ant", "ant", "mosquito", "mosquito", "ladybug"]), 'ant mosquito ladybug');
-    console.log(getUniqueValues(["b", "a", "n", "a", "n", "a", "s"]), 'b a n s');
-    console.log(getUniqueValues([
-        "mary",
-        "had",
-        "a",
-        "little",
-        "lamb",
-        "little",
-        "lamb",
-        "little",
-        "lamb"
-    ]));
+    // var bucket = [];
+    // bucket.push(shoppingCart);
+    // console.log(bucket[1]);
+
+    // function numberOfItemTypes(obj) {
+    //     var bucket = [];
+    //     bucket.push(obj);
+    //     console.log(obj[0]);
+    // }
+    // numberOfItemTypes(shoppingCart);
+    // console.log(numberOfItemTypes(shoppingCart));
 
 
 })();
