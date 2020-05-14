@@ -46,7 +46,7 @@
             addKey(e.key, konamiCode);
             console.log(count);
             console.log(bucket);
-            abcdMatch(bucket);
+            // abcdMatch(bucket);
             rickAndRoll();
         });
 
@@ -64,74 +64,70 @@
 
         // ============ Functions that builds up the Rick Attack ============
 
-        function abcMatch(arr) {
-            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
-            return (arr[0] === letterBucket[0] &&
-                    arr[1] === letterBucket[1] &&
-                    arr[2] === letterBucket[2] &&
-                    arr[3] === letterBucket[3] &&
-                    arr[4] === letterBucket[4]
+        function abcMatch(arr, arr2) {
+            return (arr[0] === arr2[0] &&
+                    arr[1] === arr2[1] &&
+                    arr[2] === arr2[2] &&
+                    arr[3] === arr2[3] &&
+                    arr[4] === arr2[4]
             );
         }
-        function abcdMatch(arr) {
-            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b'];
-            return (arr[0] === letterBucket[0] &&
-                    arr[1] === letterBucket[1] &&
-                    arr[2] === letterBucket[2] &&
-                    arr[3] === letterBucket[3] &&
-                    arr[4] === letterBucket[4] &&
-                    arr[5] === letterBucket[5] &&
-                    arr[6] === letterBucket[6] &&
-                    arr[7] === letterBucket[7] &&
-                    arr[8] === letterBucket[8]
+        function abcdMatch(arr, arr2) {
+            return (arr[0] === arr2[0] &&
+                    arr[1] === arr2[1] &&
+                    arr[2] === arr2[2] &&
+                    arr[3] === arr2[3] &&
+                    arr[4] === arr2[4] &&
+                    arr[5] === arr2[5] &&
+                    arr[6] === arr2[6] &&
+                    arr[7] === arr2[7] &&
+                    arr[8] === arr2[8]
             );
         }
-        function abcdeMatch(arr) {
-            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-            return (arr[0] === letterBucket[0] &&
-                    arr[1] === letterBucket[1] &&
-                    arr[2] === letterBucket[2] &&
-                    arr[3] === letterBucket[3] &&
-                    arr[4] === letterBucket[4] &&
-                    arr[5] === letterBucket[5] &&
-                    arr[6] === letterBucket[6] &&
-                    arr[7] === letterBucket[7] &&
-                    arr[8] === letterBucket[8] &&
-                    arr[9] === letterBucket[9]
+        function abcdeMatch(arr, arr2) {
+            return (arr[0] === arr2[0] &&
+                    arr[1] === arr2[1] &&
+                    arr[2] === arr2[2] &&
+                    arr[3] === arr2[3] &&
+                    arr[4] === arr2[4] &&
+                    arr[5] === arr2[5] &&
+                    arr[6] === arr2[6] &&
+                    arr[7] === arr2[7] &&
+                    arr[8] === arr2[8] &&
+                    arr[9] === arr2[9]
             );
         }
-        function abcdeEnterMatch(arr) {
-            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
-            return (arr[0] === letterBucket[0] &&
-                    arr[1] === letterBucket[1] &&
-                    arr[2] === letterBucket[2] &&
-                    arr[3] === letterBucket[3] &&
-                    arr[4] === letterBucket[4] &&
-                    arr[5] === letterBucket[5] &&
-                    arr[6] === letterBucket[6] &&
-                    arr[7] === letterBucket[7] &&
-                    arr[8] === letterBucket[8] &&
-                    arr[9] === letterBucket[9] &&
-                    arr[10] === letterBucket[10]
+        function abcdeEnterMatch(arr, arr2) {
+            return (arr[0] === arr2[0] &&
+                    arr[1] === arr2[1] &&
+                    arr[2] === arr2[2] &&
+                    arr[3] === arr2[3] &&
+                    arr[4] === arr2[4] &&
+                    arr[5] === arr2[5] &&
+                    arr[6] === arr2[6] &&
+                    arr[7] === arr2[7] &&
+                    arr[8] === arr2[8] &&
+                    arr[9] === arr2[9] &&
+                    arr[10] === arr2[10]
             );
         }
 
         // =========== Function that executes the Rick Attack ===========
 
         function rickAndRoll() {
-            if (abcMatch(bucket)) {
+            if (abcMatch(bucket, konamiCode)) {
                 $('#video').html('Wait.....').css('font-size', '30px');
             }
-            if (abcdMatch(bucket)) {
+            if (abcdMatch(bucket, konamiCode)) {
                 $('#video').html('Wait.....what are doing??').css('font-size', '30px');
             }
-            if (abcdeMatch(bucket)) {
+            if (abcdeMatch(bucket, konamiCode)) {
                 $('#video').html('NOOOOOOOOOOOOOOOO!!!!!!!<br>DO NOT HIT ENTER!!!').css({
                     'font-size': '30px',
                     'font-weight': 'bold'
                 });
             }
-            if (abcdeEnterMatch(bucket)) {
+            if (abcdeEnterMatch(bucket, konamiCode)) {
                 $('body').css({
                     'background-image': 'url("img/retro.gif")',
                     'background-size': '100% 1000px'
