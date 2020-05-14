@@ -50,27 +50,42 @@ $(document).ready(function() {
     // TODO: Comment out the code above. Add the class of 'house' to all the 'house-names'
     //  Write the event listener to remove the class instead
         $('#highlight-houses').click(function() {
-            // $('.house-name').removeClass('house');
-            $('.house-name').toggleClass('house');
-        })
+            $('.house-name').removeClass('house');
+        });
 
     // TODO TOGETHER: Refactor your addClass and removeClass methods to toggle the 'house' class instead
-
+        $('#highlight-houses').click(function() {
+            $('.house-name').toggleClass('house');
+        });
     /**********************************************
      * 			       Traversing
      *********************************************/
 
     // TODO TOGETHER: console log each list element's text
+        $('li').each(function() {
+            console.log($(this));
+        });
 
     // TODO TOGETHER: select all list elements and console log the first match
+        console.log($('li').first().html());
 
     // TODO TOGETHER: select all list elements and console log the last match
+        console.log($('li').last().html());
 
     // TODO TOGETHER: When I click on a list element, highlight its parent
+    // $('li').click(function() {
+    //     $(this).parent().css('background-color', 'yellow');
+    // });
 
     // TODO TOGETHER: When I click into a <ul>, console log last child in that group
+    // $('ul').click(function() {
+    //     console.log($(this).children().last().html());
+    // });
 
     // TODO TOGETHER: When I click on any list element, console log the next element
+    // $('li').click(function() {
+    //     console.log($(this).next().html());
+    // })
 
 
 
