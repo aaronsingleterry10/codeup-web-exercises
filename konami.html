@@ -29,14 +29,16 @@
     </style>
 </head>
 <body>
-    <h1>Konami Code</h1>
-<!--    <marquee>This text will scroll from right to left</marquee>-->
 
+    <h1>Konami Code</h1>
 
     <div id="video">Hello, World!!</div>
+
     <script src="js/jquery-2.2.4.js"></script>
     <script>
         "use strict";
+        (function() {
+
         var bucket = [];
         var konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
         var count = 0;
@@ -46,7 +48,6 @@
             addKey(e.key, konamiCode);
             console.log(count);
             console.log(bucket);
-            // abcdMatch(bucket);
             rickAndRoll();
         });
 
@@ -139,12 +140,9 @@
                     'color': '#f763f9'
                 });
                 $('#video').html('<iframe width="600px" height="600px" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp;start=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-
             }
         }
-
-
-
+        })();
 
     </script>
 
