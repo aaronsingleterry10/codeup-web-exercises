@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <title>Konami</title>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
     <style>
+
+        h1 {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 40px;
+        }
 
         #video {
             width: 600px;
@@ -15,6 +21,11 @@
             margin: 0 auto;
         }
 
+        div {
+            font-size: 30px;
+            font-family: 'Roboto Mono', monospace;
+        }
+
     </style>
 </head>
 <body>
@@ -22,40 +33,39 @@
 <!--    <marquee>This text will scroll from right to left</marquee>-->
 
 
-    <div id="video">just a div</div>
+    <div id="video">Hello, World!!</div>
     <script src="js/jquery-2.2.4.js"></script>
     <script>
         "use strict";
-
         var bucket = [];
+        var konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+        var count = 0;
+
         $(document).keyup(function(e){
             console.log(e.key);
-            bucket.push(e.key);
+            addKey(e.key, konamiCode);
+            console.log(count);
             console.log(bucket);
+            abcdMatch(bucket);
             rickAndRoll();
         });
 
+        // === Function that evaluates the konami code ===
 
-        // ============ Functions for Rick Attack ============
+        function addKey(input, arr1) {
+            if (input === arr1[count]) {
+                bucket.push(input);
+                count = count + 1;
+            } else {
+                bucket = [];
+                count = 0;
+            }
+        }
 
+        // ============ Functions that builds up the Rick Attack ============
 
         function abcMatch(arr) {
-            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown'];
-            return (arr[0] === letterBucket[0] &&
-                    arr[1] === letterBucket[1] &&
-                    arr[2] === letterBucket[2]
-            );
-        }
-        function abcdMatch(arr) {
-            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown'];
-            return (arr[0] === letterBucket[0] &&
-                    arr[1] === letterBucket[1] &&
-                    arr[2] === letterBucket[2] &&
-                    arr[3] === letterBucket[3]
-            );
-        }
-        function abcdeMatch(arr) {
-            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft'];
+            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
             return (arr[0] === letterBucket[0] &&
                     arr[1] === letterBucket[1] &&
                     arr[2] === letterBucket[2] &&
@@ -63,22 +73,50 @@
                     arr[4] === letterBucket[4]
             );
         }
+        function abcdMatch(arr) {
+            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b'];
+            return (arr[0] === letterBucket[0] &&
+                    arr[1] === letterBucket[1] &&
+                    arr[2] === letterBucket[2] &&
+                    arr[3] === letterBucket[3] &&
+                    arr[4] === letterBucket[4] &&
+                    arr[5] === letterBucket[5] &&
+                    arr[6] === letterBucket[6] &&
+                    arr[7] === letterBucket[7] &&
+                    arr[8] === letterBucket[8]
+            );
+        }
+        function abcdeMatch(arr) {
+            var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+            return (arr[0] === letterBucket[0] &&
+                    arr[1] === letterBucket[1] &&
+                    arr[2] === letterBucket[2] &&
+                    arr[3] === letterBucket[3] &&
+                    arr[4] === letterBucket[4] &&
+                    arr[5] === letterBucket[5] &&
+                    arr[6] === letterBucket[6] &&
+                    arr[7] === letterBucket[7] &&
+                    arr[8] === letterBucket[8] &&
+                    arr[9] === letterBucket[9]
+            );
+        }
         function abcdeEnterMatch(arr) {
             var letterBucket = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
             return (arr[0] === letterBucket[0] &&
-                arr[1] === letterBucket[1] &&
-                arr[2] === letterBucket[2] &&
-                arr[3] === letterBucket[3] &&
-                arr[4] === letterBucket[4] &&
-                arr[5] === letterBucket[5] &&
-                arr[6] === letterBucket[6] &&
-                arr[7] === letterBucket[7] &&
-                arr[8] === letterBucket[8] &&
-                arr[9] === letterBucket[9] &&
-                arr[10] === letterBucket[10]
+                    arr[1] === letterBucket[1] &&
+                    arr[2] === letterBucket[2] &&
+                    arr[3] === letterBucket[3] &&
+                    arr[4] === letterBucket[4] &&
+                    arr[5] === letterBucket[5] &&
+                    arr[6] === letterBucket[6] &&
+                    arr[7] === letterBucket[7] &&
+                    arr[8] === letterBucket[8] &&
+                    arr[9] === letterBucket[9] &&
+                    arr[10] === letterBucket[10]
             );
         }
-        // =========== Function that executes everything ===========
+
+        // =========== Function that executes the Rick Attack ===========
 
         function rickAndRoll() {
             if (abcMatch(bucket)) {
@@ -105,6 +143,7 @@
                     'color': '#f763f9'
                 });
                 $('#video').html('<iframe width="600px" height="600px" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp;start=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+
             }
         }
 
