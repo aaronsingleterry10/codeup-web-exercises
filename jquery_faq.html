@@ -67,6 +67,10 @@
             background-color: #77AF00;
         }
 
+        .yellow {
+            background-color: yellow;
+        }
+
 
     </style>
 </head>
@@ -161,13 +165,13 @@
             $('#second-btn').click(function() {
                 $('li').each(function(index) {
                     if (index === 3 || index === 7 || index === 11) {
-                        $(this).css('background-color', 'yellow');
+                        $(this).toggleClass('yellow');
                     }
                 });
             });
 
             $('h3').click(function() {
-                $(this).next().css('font-weight', 'bold');
+                $(this).next().children().css('font-weight', 'bold');
             });
 
             $('ul').click(function() {
