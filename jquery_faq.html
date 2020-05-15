@@ -14,6 +14,51 @@
             margin-bottom: 1em;
         }
 
+        div {
+            width: 400px;
+            height: 400px;
+            border: 3px solid black;
+            margin: 1.5em;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #img-frames {
+            display: flex;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: #3B94D9;
+        }
+
+        #btns {
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10em;
+        }
+
+        .left-img {
+            background-image: url("img/bluesky.jpg");
+            background-size: 100% 100%;
+        }
+        
+        .center-img {
+            background-image: url("img/sortinghat.png");
+            background-size: 100% 100%;
+        }
+        
+        .right-img {
+            background-image: url("img/officepic1.jpeg");
+            background-size: 100% 100%;
+        }
+
         .invisible {
             visibility: hidden;
         }
@@ -62,6 +107,42 @@
     </dl>
 
     <button id="toggle_button">Click to see questions.</button>
+    
+    <h3>Big Bend</h3>
+    <ul>
+        <li>Hundreds of bird species</li>
+        <li>Lots of Cactus</li>
+        <li>Located in Rio Grande, TX</li>
+        <li>Historical Park</li>
+    </ul>
+
+    <h3>Guadalupe Mountains</h3>
+    <ul>
+        <li>Has the four highest peaks in Texas</li>
+        <li>Environmentally diverse</li>
+        <li>Located in Salt Flat, TX</li>
+        <li>Lots of History</li>
+    </ul>
+
+    <h3>Palo Alto Battlefield</h3>
+    <ul>
+        <li>U.S and Mexican troops clashed here</li>
+        <li>The battle was the first in a two-year long war that changed the map of North America</li>
+        <li>Located in Brownsville, TX</li>
+        <li>Historic Battle</li>
+    </ul>
+    <button id="second-btn">Click to highlight</button>
+
+    <section id="img-frames">
+        <div class="left-img"></div>
+        <div class="center-img"></div>
+        <div class="right-img"></div>
+    </section>
+    <section id="btns">
+        <button id="left-btn">Click</button>
+        <button id="center-btn">Click</button>
+        <button id="right-btn">Click</button>
+    </section>
 
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script>
@@ -76,6 +157,35 @@
             $('dt').click(function(){
                 $(this).toggleClass('highlight');
             });
+
+            $('#second-btn').click(function() {
+                $('li').each(function(index) {
+                    if (index === 3 || index === 7 || index === 11) {
+                        $(this).css('background-color', 'yellow');
+                    }
+                });
+            });
+
+            $('h3').click(function() {
+                $(this).next().css('font-weight', 'bold');
+            });
+
+            $('ul').click(function() {
+                $(this).children().first().css('color', 'blue');
+            });
+
+            // $('#left-btn').click(function() {
+            //     $('.left-img').next().
+            // });
+            //
+            // $('#center-btn').click(function() {
+            //
+            // });
+            //
+            // $('#right-btn').click(function() {
+            //     $('.center-img').removeClass('center-img').addClass('right-img').next().removeClass('right-img').addClass('center-img');
+            // });
+
         });
     </script>
 </body>
