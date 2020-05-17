@@ -33,3 +33,12 @@ li {
 #main-heading {
     margin: 1em;
 }
+
+/* The div that holds the main ajax data */
+#posts {
+    width: 950px;
+    margin: auto;
+    padding: 0 2em 0 2em;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
