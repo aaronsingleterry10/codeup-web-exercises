@@ -20,8 +20,10 @@
             <li>Facebook</li>
             <li>Instagram</li>
             <li>Twitter</li>
+            <li>RSS</li>
         </ul>
     </nav>
+
     <div id="posts"></div>
     <button id="refresh">Refresh</button>
 </main>
@@ -35,10 +37,11 @@
                 $.ajax('data/blog.json').done(function (resp) {
                     console.log(resp);
                     $(resp).each(function (index, element) {
-                        $('#posts').append("<h2>" + element.title + "</h2>");
+                        $('#posts').append("<div>" + "<h2>" + element.title + "</h2>");
                         $('#posts').append("<p>" + element.content + "</p>");
                         $('#posts').append("<div>Genre: " + element.categories + "</div>");
-                        $('#posts').append("<div>" + element.date + "</div>");
+                        $('#posts').append("<div>" + element.date + "</div>" + "</div>");
+
                     });
                 });
             }
