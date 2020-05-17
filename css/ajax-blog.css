@@ -37,6 +37,8 @@ li {
 /* The div that holds the main ajax data */
 #posts {
     width: 950px;
+    height: 100vh;
+    overflow: auto;
     margin: auto;
     padding: 0 2em 0 2em;
     border-right: 1px solid black;
