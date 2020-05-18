@@ -21,6 +21,7 @@ $(document).ready(function() {
         console.log(todayDate);
     });
 
+    // MAPBOX API
     mapboxgl.accessToken = mapBoxKey;
     var map = new mapboxgl.Map({
         container: 'map',
@@ -31,5 +32,17 @@ $(document).ready(function() {
         },
         zoom: 12
     });
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat({lng: -98.1245, lat: 29.7030})
+        .addTo(map)
+        .setDraggable(true);
+
+
+    marker.on("dragend", function() {
+        console.log(marker.getLngLat());
+    });
+
+
 
 });
