@@ -2,10 +2,27 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0 1em 0 1em;
+    background-color: whitesmoke;
+}
+
+#main-heading {
+    /*margin: 2em 0 2em 0;*/
+    font-size: 4em;
+}
+
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid black;
     border-bottom: 1px solid black;
+}
+
+#search-bar {
+    background-color: whitesmoke;
+    border: none;
 }
 
 /* ======= NavBar links ======= */
@@ -13,34 +30,45 @@ li {
     list-style: none;
     display: inline-block;
 }
+
+a {
+    padding: 1.2em;
+    /*background-color: gray;*/
+}
+
 /* main links */
 #main-links {
     padding-left: .5em;
 }
 
 #main-links li {
-    margin: 1em 1em 1em 0;
-}
-/* social media links */
-#social-links {
-    padding-right: .5em;
+    margin: 1em 1em 0 0;
 }
 
-#social-links li {
-    margin: 1em 0 1em 1em;
+#twitter-link {
+    border-right: 1px solid black;
 }
+/* social media links */
+/*#social-links {*/
+/*    padding-right: .5em;*/
+/*}*/
+
+/*#social-links li {*/
+/*    margin: 1em 0 0 1em;*/
+/*}*/
 /* title page */
-#main-heading {
-    margin: 1em;
-}
 
 /* The div that holds the main ajax data */
 #posts {
     width: 950px;
-    height: 100vh;
+    height: 90vh;
     overflow: auto;
     margin: auto;
     padding: 0 2em 0 2em;
     border-right: 1px solid black;
     border-left: 1px solid black;
+}
+
+button {
+    display: inline;
 }
