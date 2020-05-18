@@ -8,24 +8,22 @@
 </head>
 <body>
 <main>
+    <header>
+        <div id="main-heading">My Blog</div>
+    </header>
     <nav>
         <ul id="main-links">
-            <li>Home</li>
-            <li>Archives</li>
-            <li>About</li>
-            <li>Contact Us</li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Archives</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
+            <li id="twitter-link"><a href="">Twitter</a></li>
         </ul>
-        <div id="main-heading">My Blog</div>
-        <ul id="social-links">
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>Twitter</li>
-            <li>RSS</li>
-        </ul>
+        <input type="text" id="search-bar" name="search-bar" placeholder="Search...">
     </nav>
-
     <div id="posts"></div>
-    <button id="refresh">Refresh</button>
 </main>
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
@@ -47,7 +45,7 @@
             }
 
             blog();
-            $('#refresh').click(function () {
+            $('#main-heading').click(function () {
                 $('#posts').html("");
                 blog();
             });
