@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" href="css/ajax-blog.css">
+<script src="https://kit.fontawesome.com/f8d7ac0a9e.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <main>
@@ -19,8 +20,9 @@
             <li><a href="">Contact Us</a></li>
             <li><a href="">Facebook</a></li>
             <li><a href="">Instagram</a></li>
-            <li id="twitter-link"><a href="">Twitter</a></li>
+            <li id="twitter-link"><a href="" id="twitter-a">Twitter</a></li>
         </ul>
+        <i class="fas fa-search"></i>
         <input type="text" id="search-bar" name="search-bar" placeholder="Search...">
     </nav>
     <div id="posts"></div>
@@ -35,10 +37,10 @@
                 $.ajax('data/blog.json').done(function (resp) {
                     console.log(resp);
                     $(resp).each(function (index, element) {
-                        $('#posts').append("<div>" + "<h2>" + element.title + "</h2>");
+                        $('#posts').append("<div id='title'>" + "<h2>" + element.title + "</h2>");
                         $('#posts').append("<p>" + element.content + "</p>");
-                        $('#posts').append("<div>Genre: " + element.categories + "</div>");
-                        $('#posts').append("<div>" + element.date + "</div>" + "</div>");
+                        $('#posts').append("<div id='genre'>Genre: " + element.categories + "</div>");
+                        $('#posts').append("<div id='date'>" + element.date + "</div>" + "</div>");
 
                     });
                 });
