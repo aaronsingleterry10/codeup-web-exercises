@@ -70,7 +70,9 @@ a {
     width: 950px;
     height: 75vh;
     overflow: auto;
-    margin: auto;
+    margin-top: .5em;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 2em 0 2em;
 }
 
@@ -89,6 +91,7 @@ a {
     border-bottom: 2px solid black;
 }
 
+/* pseudo classes for nav links */
 a:link {
     color: black;
 }
