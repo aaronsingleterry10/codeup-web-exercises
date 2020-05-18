@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #113132;
+    background-color: #586f6b;
 }
 
 #main-heading {
@@ -16,6 +16,10 @@ header {
     color: #EEEEEE;
     font-size: 4em;
     margin: .3em 0 .3em 0;
+}
+
+h2 {
+    color: #586f6b;
 }
 
 nav {
@@ -29,7 +33,8 @@ nav {
 }
 
 #search-bar {
-    background-color: whitesmoke;
+    background-color: #EEEEEE;
+    width: 400px;
     border: none;
 }
 
@@ -54,7 +59,7 @@ a {
 }
 
 #main-links li {
-    margin: 1em 1em 0 0;
+    margin: 1em 0 0 0;
 }
 
 #twitter-link {
@@ -70,7 +75,7 @@ a {
     width: 950px;
     height: 75vh;
     overflow: auto;
-    margin-top: .5em;
+    margin-top: .3em;
     margin-left: auto;
     margin-right: auto;
     padding: 0 2em 0 2em;
@@ -89,6 +94,10 @@ a {
     margin-bottom: 2em;
     padding-bottom: 1em;
     border-bottom: 2px solid black;
+}
+
+#memo {
+    font-size: 2em;
 }
 
 /* pseudo classes for nav links */

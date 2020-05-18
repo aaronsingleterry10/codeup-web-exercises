@@ -39,10 +39,10 @@
                     $(resp).each(function (index, element) {
                         $('#posts').append("<div id='title'>" + "<h2>" + element.title + "</h2>");
                         $('#posts').append("<p>" + element.content + "</p>");
-                        $('#posts').append("<div id='genre'>Genre: " + element.categories + "</div>");
+                        $('#posts').append("<div id='genre'>Genre: " + element.categories.join(', ') + "</div>");
                         $('#posts').append("<div id='date'>" + element.date + "</div>" + "</div>");
-
                     });
+                    $('#posts').append("<div id='memo'>Click on the 'My Blog' title to load recent blogs</div>");
                 });
             }
 
