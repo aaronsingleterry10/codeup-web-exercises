@@ -5,6 +5,48 @@
     <title>Restaurant API</title>
 </head>
 <body>
+
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+    $(document).ready(function() {
+        function dayOfTheWeek() {
+            var d = new Date();
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            var n = weekday[d.getDay()];
+            return n;
+        }
+
+        function whatTimeIsIt() {
+            var d = new Date();
+            var h = d.getHours();
+            var e = new Date();
+            var m = e.getMinutes();
+
+            return "" + h + ":" + m;
+        }
+
+        function parseTime(timeInput) {
+            return timeInput;
+        }
+
+        console.log(parseTime("5:30 pm - 11:00 pm"));
+
+        console.log(whatTimeIsIt());
+
+        console.log(dayOfTheWeek());
+        $.ajax('https://frest.glitch.me/restaurants').done(function(data) {
+            console.log(data);
+            console.log(data[0].operating_hours.Monday);
+        });
+    });
+</script>
 </body>
 </html>
