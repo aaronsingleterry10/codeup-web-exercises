@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+
+//    send a request to OpenWeatherMap OneCall API
+
+    var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
+    var weatherOptions = {
+        lat: 29.4241,
+        lon: -98.4936,
+        appid: weatherMapKey,
+        // excludes extra stuff not needed
+        exclude: 'minutely, current, hourly'
+    };
+
+    $.get(weatherUrl, weatherOptions).done(function(data) {
+        console.log(data);
+
+        var todayDate = new Date(data.daily[0].dt * 1000);
+        console.log(todayDate.toLocaleDateString());
+    });
+</script>
+</body>
+</html>
