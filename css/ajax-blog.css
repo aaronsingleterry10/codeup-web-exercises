@@ -3,19 +3,27 @@
 }
 
 body {
-    margin: 0 1em 0 1em;
-    background-color: whitesmoke;
+    margin: 0 2em 0 2em;
+    background-color: #EEEEEE;
+}
+
+header {
+    background-color: #113132;
 }
 
 #main-heading {
-    /*margin: 2em 0 2em 0;*/
+    text-align: center;
+    color: #EEEEEE;
     font-size: 4em;
+    margin: .3em 0 .3em 0;
 }
 
 nav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    /*border-top: 1px solid lightgrey;*/
+    /*border-bottom: 1px solid lightgrey;*/
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
@@ -23,6 +31,11 @@ nav {
 #search-bar {
     background-color: whitesmoke;
     border: none;
+}
+
+i {
+    margin: 0 .5em 0 1em;
+    opacity: .5;
 }
 
 /* ======= NavBar links ======= */
@@ -33,7 +46,6 @@ li {
 
 a {
     padding: 1.2em;
-    /*background-color: gray;*/
 }
 
 /* main links */
@@ -48,27 +60,44 @@ a {
 #twitter-link {
     border-right: 1px solid black;
 }
-/* social media links */
-/*#social-links {*/
-/*    padding-right: .5em;*/
-/*}*/
 
-/*#social-links li {*/
-/*    margin: 1em 0 0 1em;*/
-/*}*/
-/* title page */
+#twitter-a {
+    margin-right: 1.5em;
+}
 
-/* The div that holds the main ajax data */
 #posts {
+    background-color: #FFFFFF;
     width: 950px;
-    height: 90vh;
+    height: 75vh;
     overflow: auto;
     margin: auto;
     padding: 0 2em 0 2em;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
 }
 
-button {
-    display: inline;
+/* ID's within the HTML tags being appended with JavaScript */
+#title {
+    margin-top: 3em;
+}
+
+#genre {
+    font-weight: bold;
+}
+
+#date {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid black;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #3B94D9;
 }
