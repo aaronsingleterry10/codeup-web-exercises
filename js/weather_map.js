@@ -11,6 +11,11 @@ $(document).ready(function() {
         exclude: 'minutely, current, hourly',
         units: 'imperial'
     };
+    reverseGeocode({lng: -98.1245, lat: 29.7030}, mapBoxKey).then(function(results) {
+        results = results.split(',');
+        console.log(results);
+       $('#current-city').html(results[2]);
+    });
     // Makes timestamp human readable
     function getDate(timestamp) {
         return new Date(timestamp * 1000).toLocaleDateString();
@@ -58,6 +63,13 @@ $(document).ready(function() {
     marker.on("dragend", function() {
         var lngLat = marker.getLngLat();
         console.log('Longitude: ' + lngLat.lng + ', Latitude: ' + lngLat.lat );
+        reverseGeocode(lngLat, mapBoxKey).then(function(results) {
+            console.log(results);
+            results = results.split(',');
+            console.log(results[1]);
+            $('#current-city').html(results[1]);
+        });
+
         weatherOptions = {
             lat: lngLat.lat,
             lon: lngLat.lng,
@@ -70,8 +82,6 @@ $(document).ready(function() {
         weatherUpdate();
 
     });
-
-
 
 
 });
