@@ -14,9 +14,9 @@
 <nav class="navbar navbar-light bg-primary">
     <a class="navbar-brand text-light">Weather App</a>
     <div class="navbar-brand text-light">Current city: <span id="current-city"></span></div>
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="City, State" aria-label="Search">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Find</button>
+    <form name="search" class="form-inline">
+        <input id="city" class="form-control mr-sm-2" type="search" placeholder="City, State" aria-label="Search">
+        <button id="submit-btn" class="btn btn-outline-light my-2 my-sm-0" type="submit">Find</button>
     </form>
 </nav>
 
@@ -41,7 +41,6 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
-<script src="js/mapbox-lecture.js"></script>
 <script src="js/weather_map.js"></script>
 </body>
 </html>
