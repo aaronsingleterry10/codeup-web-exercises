@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(function () {
-
+    // === WeatherMap API ===
     var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
     var weatherOptions = {
         lat: 29.7030,
@@ -17,7 +17,7 @@ $(document).ready(function () {
         $('#current-city').html(results[0]);
     });
 
-    // Makes timestamp human readable
+    // ==== Makes timestamp human readable ====
     function getDate(timestamp) {
         return new Date(timestamp * 1000).toLocaleDateString();
     }
@@ -45,7 +45,8 @@ $(document).ready(function () {
     }
 
     weatherUpdate();
-    // MAPBOX API
+
+    // ===== MAPBOX API ====
     mapboxgl.accessToken = mapBoxKey;
     var map = new mapboxgl.Map({
         container: 'map',
@@ -57,7 +58,7 @@ $(document).ready(function () {
         zoom: 12
     });
 
-    // MARKER
+    // ==== MARKER ====
     var marker = new mapboxgl.Marker()
         .setLngLat({lng: -98.1245, lat: 29.7030})
         .addTo(map)
@@ -66,13 +67,14 @@ $(document).ready(function () {
     marker.on("dragend", function () {
         var lngLat = marker.getLngLat();
         console.log('Longitude: ' + lngLat.lng + ', Latitude: ' + lngLat.lat);
+        // Method below displays city and state on the navbar wherever marker is placed
         reverseGeocode(lngLat, mapBoxKey).then(function (results) {
             console.log(results);
             results = results.split(',');
             console.log(results[1]);
             $('#current-city').html(results[0]);
         });
-
+        // displays the forecast of the city where marker is placed
         weatherOptions = {
             lat: lngLat.lat,
             lon: lngLat.lng,
@@ -86,21 +88,46 @@ $(document).ready(function () {
 
     });
 
+    // === Code for "City, State" search box and "Find" button ===
     var cityStateInput = document.forms.search.city;
+    var coords;
     $('#submit-btn').click(function (e) {
         e.preventDefault();
         console.log(cityStateInput.value);
+        geocode(cityStateInput.value, mapBoxKey).then(function (results) {
+            coords = results;
+            console.log(coords[0]);
+            map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: {
+                    lng: coords[0],
+                    lat: coords[1]
+                },
+                zoom: 11
+            });
+            marker.setLngLat(results);
+            marker.addTo(map);
+            // Displays name of city and state of the search input
+            reverseGeocode({lng: coords[0], lat: coords[1]}, mapBoxKey).then(function (results) {
+                results = results.split(',');
+                $('#current-city').html(results[0]);
+            });
+        });
+
 
     });
+
+    // ==== Geocode functions ====
 
     function geocode(search, token) {
         var baseUrl = 'https://api.mapbox.com';
         var endPoint = '/geocoding/v5/mapbox.places/';
         return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-            .then(function(res) {
+            .then(function (res) {
                 return res.json();
                 // to get all the data from the request, comment out the following three lines...
-            }).then(function(data) {
+            }).then(function (data) {
                 return data.features[0].center;
             });
     }
@@ -114,7 +141,10 @@ $(document).ready(function () {
             })
             // to get all the data from the request, comment out the following three lines...
             .then(function (data) {
-                return data.features[1].place_name;
+                console.log(data)
+                return data.features[2].place_name;
             });
     }
+
+    console.log($('.navbar, .form-inline'));
 });
