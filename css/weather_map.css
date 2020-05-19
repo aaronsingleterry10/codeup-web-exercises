@@ -9,3 +9,15 @@
     margin-bottom: 2em;
 }
 
+.heading {
+    text-align: center;
+}
+
+.temp {
+    font-weight: bold;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
