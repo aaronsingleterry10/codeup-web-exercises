@@ -19,8 +19,22 @@ $(document).ready(function() {
         console.log(data);
         var todayDate = getDate(data.daily[0].dt);
         console.log(todayDate);
+        $('#date1').html(getDate(data.daily[0].dt));
+        // $(data).each(function(index, element) {
+        //     $('#cards').html("<div>" + getDate(element.daily[index].dt) + "</div>" +)
+        // });
+        var forecastHtml = '';
+        for (var i = 0; i <= 5; i++) {
+            forecastHtml += "<div class='card' style='width: 12rem;'>";
+            forecastHtml += "<div class='card-header'>" + getDate(data.daily[i].dt) + "</div>";
+            forecastHtml += "<div class='list-group-item'>" + data.daily[i].weather[0].description + "</div>";
+            forecastHtml += "<div class='list-group-item'>" + "Humidity: " + data.daily[i].humidity + "</div>";
+            forecastHtml += "<div class='list-group-item'>" + "Wind: " + data.daily[i].wind_speed + "</div>";
+            forecastHtml += "<div class='list-group-item'>" + "Pressure: " + data.daily[i].pressure + "</div>";
+            forecastHtml += "</div>";
+        }
+        $('#cards').html(forecastHtml);
     });
-
     // MAPBOX API
     mapboxgl.accessToken = mapBoxKey;
     var map = new mapboxgl.Map({
@@ -43,6 +57,6 @@ $(document).ready(function() {
         console.log(marker.getLngLat());
     });
 
-
+    console.log(document.getElementsByTagName('article'));
 
 });
