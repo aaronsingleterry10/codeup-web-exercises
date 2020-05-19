@@ -15,26 +15,28 @@ $(document).ready(function() {
     function getDate(timestamp) {
         return new Date(timestamp * 1000).toLocaleDateString();
     }
+    function weatherUpdate() {
+        $.get(weatherUrl, weatherOptions).done(function (data) {
+            console.log(data);
+            var todayDate = getDate(data.daily[0].dt);
+            console.log(todayDate);
+            $('#date1').html(getDate(data.daily[0].dt));
 
-    $.get(weatherUrl, weatherOptions).done(function(data) {
-        console.log(data);
-        var todayDate = getDate(data.daily[0].dt);
-        console.log(todayDate);
-        $('#date1').html(getDate(data.daily[0].dt));
-
-        var forecastHtml = '';
-        for (var i = 0; i <= 4; i++) {
-            forecastHtml += "<div class='card' style='width: 15rem;'>";
-            forecastHtml += "<div class='card-header heading'>" + getDate(data.daily[i].dt) + "</div>";
-            forecastHtml += "<div class='list-group-item temp'>" + data.daily[i].temp.max + "&#176;" + "F" + " / " + data.daily[i].temp.min + "&#176;" + "F" + "</div>";
-            forecastHtml += "<div class='list-group-item'>" + "Description: " + "<span class='bold'>" + data.daily[i].weather[0].description + "</span>" + "</div>";
-            forecastHtml += "<div class='list-group-item'>" + "Humidity: " + "<span class='bold'>" + data.daily[i].humidity + "</span>" + "</div>";
-            forecastHtml += "<div class='list-group-item'>" + "Wind: " + "<span class='bold'>" + data.daily[i].wind_speed + "</span>" + "</div>";
-            forecastHtml += "<div class='list-group-item'>" + "Pressure: " + "<span class='bold'>" + data.daily[i].pressure + "</span>" + "</div>";
-            forecastHtml += "</div>";
-        }
-        $('#cards').html(forecastHtml);
-    });
+            var forecastHtml = '';
+            for (var i = 0; i <= 4; i++) {
+                forecastHtml += "<div class='card' style='width: 15rem;'>";
+                forecastHtml += "<div class='card-header heading'>" + getDate(data.daily[i].dt) + "</div>";
+                forecastHtml += "<div class='list-group-item temp'>" + data.daily[i].temp.max + "&#176;" + "F" + " / " + data.daily[i].temp.min + "&#176;" + "F" + "</div>";
+                forecastHtml += "<div class='list-group-item'>" + "Description: " + "<span class='bold'>" + data.daily[i].weather[0].description + "</span>" + "</div>";
+                forecastHtml += "<div class='list-group-item'>" + "Humidity: " + "<span class='bold'>" + data.daily[i].humidity + "</span>" + "</div>";
+                forecastHtml += "<div class='list-group-item'>" + "Wind: " + "<span class='bold'>" + data.daily[i].wind_speed + "</span>" + "</div>";
+                forecastHtml += "<div class='list-group-item'>" + "Pressure: " + "<span class='bold'>" + data.daily[i].pressure + "</span>" + "</div>";
+                forecastHtml += "</div>";
+            }
+            $('#cards').html(forecastHtml);
+        });
+    }
+    weatherUpdate();
     // MAPBOX API
     mapboxgl.accessToken = mapBoxKey;
     var map = new mapboxgl.Map({
@@ -54,7 +56,22 @@ $(document).ready(function() {
         .setDraggable(true);
 
     marker.on("dragend", function() {
-        console.log(marker.getLngLat());
+        var lngLat = marker.getLngLat();
+        console.log('Longitude: ' + lngLat.lng + ', Latitude: ' + lngLat.lat );
+        weatherOptions = {
+            lat: lngLat.lat,
+            lon: lngLat.lng,
+            appid: weatherMapKey,
+            // excludes extra stuff not needed
+            exclude: 'minutely, current, hourly',
+            units: 'imperial'
+        };
+        $('#cards').html('');
+        weatherUpdate();
+
     });
+
+
+
 
 });
