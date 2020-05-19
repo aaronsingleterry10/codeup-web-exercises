@@ -33,7 +33,7 @@ $(document).ready(function () {
             for (var i = 0; i <= 4; i++) {
                 forecastHtml += "<div class='card' style='width: 15rem;'>";
                 forecastHtml += "<div class='card-header heading'>" + getDate(data.daily[i].dt) + "</div>";
-                forecastHtml += "<div class='list-group-item temp'>" + data.daily[i].temp.max + "&#176;" + "F" + " / " + data.daily[i].temp.min + "&#176;" + "F" + "</div>";
+                forecastHtml += "<div class='list-group-item temp'>" + data.daily[i].temp.max + "&#176;" + "F" + " / " + data.daily[i].temp.min + "&#176;" + "F" + "<br>" + "<img src='http://openweathermap.org/img/w/" + data.daily[i].weather[0].icon + ".png'>" + "</div>";
                 forecastHtml += "<div class='list-group-item'>" + "Description: " + "<span class='bold'>" + data.daily[i].weather[0].description + "</span>" + "</div>";
                 forecastHtml += "<div class='list-group-item'>" + "Humidity: " + "<span class='bold'>" + data.daily[i].humidity + "</span>" + "</div>";
                 forecastHtml += "<div class='list-group-item'>" + "Wind: " + "<span class='bold'>" + data.daily[i].wind_speed + "</span>" + "</div>";
@@ -41,6 +41,7 @@ $(document).ready(function () {
                 forecastHtml += "</div>";
             }
             $('#cards').html(forecastHtml);
+            // console.log(data.daily[0].weather[0].icon.png);
         });
     }
 
