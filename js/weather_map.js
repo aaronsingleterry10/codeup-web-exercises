@@ -68,12 +68,9 @@ $(document).ready(function () {
 
     marker.on("dragend", function () {
         var lngLat = marker.getLngLat();
-        console.log('Longitude: ' + lngLat.lng + ', Latitude: ' + lngLat.lat);
         // Method below displays city and state on the navbar wherever marker is placed
         reverseGeocode(lngLat, mapBoxKey).then(function (results) {
-            console.log(results);
             results = results.split(',');
-            console.log(results[1]);
             $('#current-city').html(results[0]);
         });
         // displays the forecast of the city where marker is placed
@@ -81,7 +78,6 @@ $(document).ready(function () {
         weatherOptions.lon = lngLat.lng;
         $('#cards').html('');
         weatherUpdate();
-
     });
 
     // === Code for "City, State" search box and "Find" button ===
