@@ -11,6 +11,8 @@ $(document).ready(function () {
         exclude: 'minutely, current, hourly',
         units: 'imperial'
     };
+
+    // === Displays city and state
     reverseGeocode({lng: -98.1245, lat: 29.7030}, mapBoxKey).then(function (results) {
         results = results.split(',');
         console.log(results[0]);
@@ -21,7 +23,7 @@ $(document).ready(function () {
     function getDate(timestamp) {
         return new Date(timestamp * 1000).toLocaleDateString();
     }
-
+    // Get request for Weather API
     function weatherUpdate() {
         $.get(weatherUrl, weatherOptions).done(function (data) {
             console.log(data);
@@ -44,7 +46,7 @@ $(document).ready(function () {
             // console.log(data.daily[0].weather[0].icon.png);
         });
     }
-
+    // === Function Call ===
     weatherUpdate();
 
     // ===== MAPBOX API ====
@@ -76,14 +78,8 @@ $(document).ready(function () {
             $('#current-city').html(results[0]);
         });
         // displays the forecast of the city where marker is placed
-        weatherOptions = {
-            lat: lngLat.lat,
-            lon: lngLat.lng,
-            appid: weatherMapKey,
-            // excludes extra stuff not needed
-            exclude: 'minutely, current, hourly',
-            units: 'imperial'
-        };
+        weatherOptions.lat = lngLat.lat;
+        weatherOptions.lon = lngLat.lng;
         $('#cards').html('');
         weatherUpdate();
 
@@ -98,6 +94,7 @@ $(document).ready(function () {
         geocode(cityStateInput.value, mapBoxKey).then(function (results) {
             coords = results;
             console.log(coords[0]);
+            console.log(coords[1]);
             map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
@@ -114,9 +111,11 @@ $(document).ready(function () {
                 results = results.split(',');
                 $('#current-city').html(results[0]);
             });
+            weatherOptions.lat = coords[1];
+            weatherOptions.lon = coords[0];
         });
-
-
+        $('#cards').html('');
+        weatherUpdate();
     });
 
     // ==== Geocode functions ====
