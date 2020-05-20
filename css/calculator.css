@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    display: inline-grid;
+    width: 400px;
+    height: 500px;
+    grid-template-areas:
+            'firstNum  firstNum op     secondNum'
+            'one       two     three   plus'
+            'four      five    six     minus'
+            'seven     eight   nine    times'
+            'cleared   zero    equals  division';
+}
+
+#first-num, #operator, #second-num {
+    border: 1px solid black;
+    margin-bottom: .5em;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    font-size: 2em;
+}
+
+#clear {
+    grid-area: cleared;
+}
+
+#plus {
+    grid-area: plus;
+}
+
+#minus {
+    grid-area: minus;
+}
+
+#multiply {
+    grid-area: times;
+}
+
+#division {
+    grid-area: division;
+}
+
+#equals {
+    grid-area: equals;
+}
+
+#first-num {
+    grid-area: firstNum;
+}
+
+#operator {
+    grid-area: op;
+}
+
+#second-num {
+    grid-area: secondNum;
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#four {
+    grid-area: four;
+}
+
+#five {
+    grid-area: five;
+}
+
+#six {
+    grid-area: six;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#zero {
+    grid-area: zero;
+}
+
