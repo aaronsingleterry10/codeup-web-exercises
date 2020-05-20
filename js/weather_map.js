@@ -43,7 +43,6 @@ $(document).ready(function () {
                 forecastHtml += "</div>";
             }
             $('#cards').html(forecastHtml);
-            // console.log(data.daily[0].weather[0].icon.png);
         });
     }
     // === Function Call ===
@@ -90,11 +89,8 @@ $(document).ready(function () {
     var coords;
     $('#submit-btn').click(function (e) {
         e.preventDefault();
-        console.log(cityStateInput.value);
         geocode(cityStateInput.value, mapBoxKey).then(function (results) {
             coords = results;
-            console.log(coords[0]);
-            console.log(coords[1]);
             map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
@@ -104,18 +100,19 @@ $(document).ready(function () {
                 },
                 zoom: 11
             });
-            marker.setLngLat(results);
+            marker.setLngLat(coords);
             marker.addTo(map);
-            // Displays name of city and state of the search input
+            // === Displays name of city and state of the search input ===
             reverseGeocode({lng: coords[0], lat: coords[1]}, mapBoxKey).then(function (results) {
                 results = results.split(',');
                 $('#current-city').html(results[0]);
             });
+            // === Updates weather forecast of searched city ===
             weatherOptions.lat = coords[1];
             weatherOptions.lon = coords[0];
+            $('#cards').html('');
+            weatherUpdate();
         });
-        $('#cards').html('');
-        weatherUpdate();
     });
 
     // ==== Geocode functions ====
