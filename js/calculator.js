@@ -10,6 +10,7 @@ $(document).ready(function () {
         } else {
             $('#first-num').append('1');
         }
+        console.log(pF($('#first-num').text()));
 
     });
     $('#two').click(function () {
@@ -18,7 +19,6 @@ $(document).ready(function () {
         } else {
             $('#first-num').append('2');
         }
-
     });
     $('#three').click(function () {
         if ($('#operator').text().length > 0) {
@@ -79,31 +79,56 @@ $(document).ready(function () {
     $('#plus').click(function () {
         $('#operator').html('');
         $('#operator').html('+');
-        console.log($('#operator').text().length);
+        console.log($('#operator').text());
     });
-    $('#minus').click(function() {
+    $('#minus').click(function () {
         $('#operator').html('');
         $('#operator').html('-');
     });
-    $('#multiply').click(function() {
+    $('#multiply').click(function () {
         $('#operator').html('');
         $('#operator').html('x');
     });
-    $('#division').click(function() {
+    $('#division').click(function () {
         $('#operator').html('');
         $('#operator').html('/');
     });
-    function addition(num1, num2) {
-        return num1 + num2;
-    }
-    function subtraction(num1, num2) {
-        return num1 - num2;
-    }
-    function multiplication(num1, num2) {
-        return num1 * num2;
-    }
-    function division(num1, num2) {
-        return num1 / num2;
+    $('#equals').click(function () {
+        if ($('#operator').text() === '+') {
+            // $('#operator, #second-num').html('');
+            $('#first-num').text(addition($('#first-num').text(), $('#second-num').text()) + '');
+            // console.log(addition(pF($('#first-num').text()), pF($('#second-num').text())));
+            $('#second-num').html('');
+        } else if ($('#operator').text() === '-') {
+            $('#first-num').text(subtraction($('#first-num').text(), $('#second-num').text()) + '');
+            $('#second-num').html('');
+        } else if ($('#operator').text() === 'x') {
+            $('#first-num').text(multiplication($('#first-num').text(), $('#second-num').text()) + '');
+            $('#second-num').html('');
+        } else {
+            $('#first-num').text(division($('#first-num').text(), $('#second-num').text()) + '');
+            $('#second-num').html('');
+
+        }
+    });
+
+    function pF(str) {
+        return parseFloat(str);
     }
 
+    function addition(num1, num2) {
+        return parseFloat(num1) + parseFloat(num2);
+    }
+
+    function subtraction(num1, num2) {
+        return parseFloat(num1) - parseFloat(num2);
+    }
+
+    function multiplication(num1, num2) {
+        return parseFloat(num1) * parseFloat(num2);
+    }
+
+    function division(num1, num2) {
+        return parseFloat(num1) / parseFloat(num2);
+    }
 });
