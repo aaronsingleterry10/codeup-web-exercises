@@ -2,113 +2,128 @@
 $(document).ready(function () {
 
     // Assigns functions to buttons
+
     $('#clear').click(function () {
-        $('#first-num, #operator, #second-num').html('');
+        // $('#first-num, #operator, #second-num').val('');
+        console.log($('#clear'));
     });
+    var text = $('#one').text();
     $('#one').click(function () {
-        var text = $(this).text();
-        console.log(text);
+
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val(text);
+        } else if ($('#operator').val().length <= 0) {
+            $('#first-num').val(text);
+            text += $('#one').text();
+        }
+    });
+    $('#two').click(function () {
+        text += $(this).text();
         if ($('#operator').val().length > 0) {
             $('#second-num').val(text);
         } else {
             $('#first-num').val(text);
         }
     });
-    $('#two').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('2');
-        } else {
-            $('#first-num').append('2');
-        }
-    });
     $('#three').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('3');
+        text += $(this).text();
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val('3');
         } else {
-            $('#first-num').append('3');
+            $('#first-num').val(text);
         }
     });
     $('#four').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('4');
+        text += $(this).text();
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val(text);
         } else {
-            $('#first-num').append('4');
+            $('#first-num').val(text);
         }
     });
     $('#five').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('5');
+        text += $(this).text();
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val(text);
         } else {
-            $('#first-num').append('5');
+            $('#first-num').val(text);
         }
     });
     $('#six').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('6');
+        text += $(this).text();
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val(text);
         } else {
-            $('#first-num').append('6');
+            $('#first-num').val(text);
         }
     });
     $('#seven').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('7');
+        text += $(this).text();
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val(text);
         } else {
-            $('#first-num').append('7');
+            $('#first-num').val(text);
         }
     });
     $('#eight').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('8');
+        text += $(this).text();
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val(text);
         } else {
-            $('#first-num').append('8');
+            $('#first-num').val(text);
         }
     });
     $('#nine').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('9');
+        text += $(this).text();
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val(text);
         } else {
-            $('#first-num').append('9');
+            $('#first-num').val(text);
         }
     });
     $('#zero').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('0');
+        text += $(this).text();
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val(text);
         } else {
-            $('#first-num').append('0');
+            $('#first-num').val(text);
         }
     });
     $('#plus').click(function () {
         var text = $(this).text();
         $('#operator').html('');
-        $('#operator').val('+');
+        $('#operator').val(text);;
     });
     $('#minus').click(function () {
+        var text = $(this).text();
         $('#operator').html('');
-        $('#operator').html('-');
+        $('#operator').val(text);;
     });
     $('#multiply').click(function () {
+        var text = $(this).text();
         $('#operator').html('');
-        $('#operator').html('x');
+        $('#operator').val(text);;
     });
     $('#division').click(function () {
+        var text = $(this).texval
         $('#operator').html('');
-        $('#operator').html('/');
+        $('#operator').val(text);;
     });
 
     // This executes the math utilizing the math functions
     $('#equals').click(function () {
-        if ($('#operator').text() === '+') {
-            $('#first-num').text(addition($('#first-num').text(), $('#second-num').text()) + '');
-            $('#second-num').html('');
+        if ($('#operator').val() === '+') {
+            $('#first-num').val(addition($('#first-num').val(), $('#second-num').val()) + '');
+            $('#second-num').val('');
         } else if ($('#operator').text() === '-') {
-            $('#first-num').text(subtraction($('#first-num').text(), $('#second-num').text()) + '');
-            $('#second-num').html('');
-        } else if ($('#operator').text() === 'x') {
-            $('#first-num').text(multiplication($('#first-num').text(), $('#second-num').text()) + '');
-            $('#second-num').html('');
+            $('#first-num').val(subtraction($('#first-num').val(), $('#second-num').val()) + '');
+            $('#second-num').val('');
+        } else if ($('#operator').val() === 'x') {
+            $('#first-num').val(multiplication($('#first-num').val(), $('#second-num').val()) + '');
+            $('#second-num').val('');
         } else {
-            $('#first-num').text(division($('#first-num').text(), $('#second-num').text()) + '');
-            $('#second-num').html('');
+            $('#first-num').val(division($('#first-num').val(), $('#second-num').val()) + '');
+            $('#second-num').val('');
 
         }
     });
