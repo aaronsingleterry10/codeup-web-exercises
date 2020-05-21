@@ -6,6 +6,8 @@
     display: inline-grid;
     width: 400px;
     height: 500px;
+    grid-template-columns: 100px 100px 25% 25%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
     grid-template-areas:
             'firstNum  firstNum op     secondNum'
             'one       two     three   plus'
@@ -17,7 +19,12 @@
 #first-num, #operator, #second-num {
     border: 1px solid black;
     margin-bottom: .5em;
+    font-size: 1.5em;
+}
 
+#first-num {
+    display: flex;
+    align-items: center;
 }
 
 .button {
