@@ -1,6 +1,7 @@
 "use strict";
 $(document).ready(function () {
 
+    // Assigns functions to buttons
     $('#clear').click(function () {
         $('#first-num, #operator, #second-num').html('');
     });
@@ -10,8 +11,6 @@ $(document).ready(function () {
         } else {
             $('#first-num').append('1');
         }
-        console.log(pF($('#first-num').text()));
-
     });
     $('#two').click(function () {
         if ($('#operator').text().length > 0) {
@@ -79,7 +78,6 @@ $(document).ready(function () {
     $('#plus').click(function () {
         $('#operator').html('');
         $('#operator').html('+');
-        console.log($('#operator').text());
     });
     $('#minus').click(function () {
         $('#operator').html('');
@@ -93,11 +91,11 @@ $(document).ready(function () {
         $('#operator').html('');
         $('#operator').html('/');
     });
+
+    // This executes the math utilizing the math functions
     $('#equals').click(function () {
         if ($('#operator').text() === '+') {
-            // $('#operator, #second-num').html('');
             $('#first-num').text(addition($('#first-num').text(), $('#second-num').text()) + '');
-            // console.log(addition(pF($('#first-num').text()), pF($('#second-num').text())));
             $('#second-num').html('');
         } else if ($('#operator').text() === '-') {
             $('#first-num').text(subtraction($('#first-num').text(), $('#second-num').text()) + '');
@@ -112,10 +110,7 @@ $(document).ready(function () {
         }
     });
 
-    function pF(str) {
-        return parseFloat(str);
-    }
-
+    // These functions do the math and parsing logic
     function addition(num1, num2) {
         return parseFloat(num1) + parseFloat(num2);
     }
