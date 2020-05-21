@@ -4,17 +4,20 @@ $(document).ready(function () {
     // Assigns functions to buttons
 
     $('#clear').click(function () {
-        // $('#first-num, #operator, #second-num').val('');
-        console.log($('#clear'));
+        $('#first-num, #operator, #second-num').val('');
+        text1 = '';
     });
-    var text = $('#one').text();
-    $('#one').click(function () {
 
+    var text1 = $('#one').text();
+    $('#one').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text);
+            $('#second-num').val(text1);
         } else if ($('#operator').val().length <= 0) {
-            $('#first-num').val(text);
-            text += $('#one').text();
+            $('#first-num').val(text1);
+            text1 += $('#one').text();
+            // console.log(text);
+            // text + $('#one').text();
         }
     });
     $('#two').click(function () {
