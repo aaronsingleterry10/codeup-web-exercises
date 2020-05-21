@@ -22,10 +22,10 @@
     font-size: 1.5em;
 }
 
-#first-num {
-    display: flex;
-    align-items: center;
-}
+/*#first-num {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
 
 .button {
     display: flex;

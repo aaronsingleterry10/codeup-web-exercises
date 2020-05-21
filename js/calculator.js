@@ -6,10 +6,12 @@ $(document).ready(function () {
         $('#first-num, #operator, #second-num').html('');
     });
     $('#one').click(function () {
-        if ($('#operator').text().length > 0) {
-            $('#second-num').append('1');
+        var text = $(this).text();
+        console.log(text);
+        if ($('#operator').val().length > 0) {
+            $('#second-num').val(text);
         } else {
-            $('#first-num').append('1');
+            $('#first-num').val(text);
         }
     });
     $('#two').click(function () {
@@ -76,8 +78,9 @@ $(document).ready(function () {
         }
     });
     $('#plus').click(function () {
+        var text = $(this).text();
         $('#operator').html('');
-        $('#operator').html('+');
+        $('#operator').val('+');
     });
     $('#minus').click(function () {
         $('#operator').html('');
