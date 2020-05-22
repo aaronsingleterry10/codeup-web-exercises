@@ -47,3 +47,12 @@ console.log(userEmail);
 // Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 let totalYears = users.reduce((years, user) => years + user.yearsOfExperience, 0);
 console.log(totalYears/users.length);
+
+// Use .reduce to get the longest email from the list of users.
+let longestEmail = users.reduce((longEmail, user) => (longEmail.email.length > user.email.length) ? longEmail : user, {email: 'hello'});
+// let longestEmail = users.filter((a, b) => a.email.length > b);
+// console.log(users[0].email.length);
+console.log(longestEmail);
+
+// Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+// let firstName = users.reduce((first, user) => `Your instructors are: `)
