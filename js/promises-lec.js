@@ -7,13 +7,20 @@
 var pokemonPromise = fetch('https://pokeapi.co/api/v2/pokemon');
 
 //TODO: console log the results of the above Promise. What is the result?
-
+console.log(pokemonPromise);
 //TODO: add a method that runs if the Promise resolves successfully
-
+// pokemonPromise.then(() => console.log('API request successful'))
+// .catch(() => console.log("API request failed"));
 //TODO: add a method that runs if the Promise fails
 
 //TODO: In the callback function of the .then method, parse the response into JSON
-
+// pokemonPromise.then((response) => response.json())
+//     // the return from this first function, is passed as a parameter in the second one
+//                 .then(jsonResponse => jsonResponse.results)
+//                 .then(pokemonArray => pokemonArray.forEach(pokemon => {
+//                     console.log(pokemon.name);
+//                 }))
+//                 .catch(() => console.log("API request failed"));
 /*********************************************
  *              CHAINING PROMISES
  ******************************************** */
@@ -29,11 +36,25 @@ var pokemonPromise = fetch('https://pokeapi.co/api/v2/pokemon');
 // Let's try working with the Star Wars API!
 
 // TODO: Using Promises, make a fetch request to the Star Wars API
-
+let starWarsApi = fetch("https://swapi.dev/api/people/");
+console.log(starWarsApi);
 // TODO: Use Promise chaining to console log the json response
-
+// starWarsApi.then(response => response.json())
+//             //access the results property from json object
+//             .then(jsonResponse => jsonResponse.results)
+//             //iterate over the results array and access title and id properties of each film
+//             .then(resultsArray => resultsArray.forEach(film => {
+//                 console.log(film.title + '' + film.episode_id)
+//             }))
+//             //this runs if fetch request fails
+//             .catch(error => console.log(error));
 // TODO: chain another method that iterates through the results array and console logs the names
 //  of all characters and their birth_years
+starWarsApi.then(response => response.json())
+    .then(jsonResponse => jsonResponse.results)
+    .then(jsonArray => jsonArray.forEach(person => {
+        console.log(`Person name: ${person.name}. Birthyear: ${person.birth_year}`);
+    }))
 
 /*********************************************
  *              CUSTOM PROMISES
