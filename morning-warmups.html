@@ -394,18 +394,56 @@
             //
             // console.log(flatten([[1, 2, 3], [4, 5, 6]]));
             // console.log(flatten([[4, 5], [6, 7], [7, 8]]));
-            function numberOfWords(str) {
-                if (typeof str === "string") {
-                    str = str.split(' ');
-                    return str.length;
-                } else {
-                    return 0;
+            // function numberOfWords(str) {
+            //     if (typeof str === "string") {
+            //         str = str.split(' ');
+            //         return str.length;
+            //     } else {
+            //         return 0;
+            //     }
+            // }
+            //
+            // console.log(numberOfWords('hello world'));
+            // console.log(numberOfWords(7));
+            // console.log(numberOfWords('my name is blank'));
+            var hamsters = [
+                {
+                    name: "Hamtaro",
+                    heightInMM: 86,
+                    fur: ['orange', 'white'],
+                    gender: "male",
+                    dateOfBirth: "August 6"
+                } , {
+                    name: "Bijou",
+                    heightInMM: 75,
+                    fur: ['white'],
+                    gender: "female",
+                    dateOfBirth: "July 10"
+                } , {
+                    name: "Oxnard",
+                    heightInMM: 100,
+                    fur: ['grey', 'white'],
+                    gender: "male",
+                    dateOfBirth: "May 3"
+                } , {
+                    name: "Boss",
+                    heightInMM: 120,
+                    fur: ['black', 'cream'],
+                    gender: "male",
+                    dateOfBirth: "Spetember 21"
+                } , {
+                    name: "Snoozer",
+                    heightInMM: 85,
+                    fur: ['brown', 'white'],
+                    gender: "male",
+                    dateOfBirth: "January 14"
                 }
-            }
-
-            console.log(numberOfWords('hello world'));
-            console.log(numberOfWords(7));
-            console.log(numberOfWords('my name is blank'));
+            ];
+            // function greaterThan85(arr) {
+            //
+            // }
+            let greaterThan85 = hamsters.filter((hamster) => hamster.heightInMM > 85);
+            console.log(greaterThan85);
         })();
 
 
