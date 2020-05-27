@@ -406,44 +406,62 @@
             // console.log(numberOfWords('hello world'));
             // console.log(numberOfWords(7));
             // console.log(numberOfWords('my name is blank'));
-            var hamsters = [
-                {
-                    name: "Hamtaro",
-                    heightInMM: 86,
-                    fur: ['orange', 'white'],
-                    gender: "male",
-                    dateOfBirth: "August 6"
-                } , {
-                    name: "Bijou",
-                    heightInMM: 75,
-                    fur: ['white'],
-                    gender: "female",
-                    dateOfBirth: "July 10"
-                } , {
-                    name: "Oxnard",
-                    heightInMM: 100,
-                    fur: ['grey', 'white'],
-                    gender: "male",
-                    dateOfBirth: "May 3"
-                } , {
-                    name: "Boss",
-                    heightInMM: 120,
-                    fur: ['black', 'cream'],
-                    gender: "male",
-                    dateOfBirth: "Spetember 21"
-                } , {
-                    name: "Snoozer",
-                    heightInMM: 85,
-                    fur: ['brown', 'white'],
-                    gender: "male",
-                    dateOfBirth: "January 14"
-                }
-            ];
-            // function greaterThan85(arr) {
-            //
+            // var hamsters = [
+            //     {
+            //         name: "Hamtaro",
+            //         heightInMM: 86,
+            //         fur: ['orange', 'white'],
+            //         gender: "male",
+            //         dateOfBirth: "August 6"
+            //     } , {
+            //         name: "Bijou",
+            //         heightInMM: 75,
+            //         fur: ['white'],
+            //         gender: "female",
+            //         dateOfBirth: "July 10"
+            //     } , {
+            //         name: "Oxnard",
+            //         heightInMM: 100,
+            //         fur: ['grey', 'white'],
+            //         gender: "male",
+            //         dateOfBirth: "May 3"
+            //     } , {
+            //         name: "Boss",
+            //         heightInMM: 120,
+            //         fur: ['black', 'cream'],
+            //         gender: "male",
+            //         dateOfBirth: "Spetember 21"
+            //     } , {
+            //         name: "Snoozer",
+            //         heightInMM: 85,
+            //         fur: ['brown', 'white'],
+            //         gender: "male",
+            //         dateOfBirth: "January 14"
+            //     }
+            // ];
+            // // function greaterThan85(arr) {
+            // //
+            // // }
+            // let greaterThan85 = hamsters.filter((hamster) => hamster.heightInMM > 85);
+            // console.log(greaterThan85);
+            // function inBetween(first, last, word) {
+            //     let bucket = [];
+            //     bucket.push(first, last, word);
+            //     bucket.sort;
+            //     console.log(bucket);
             // }
-            let greaterThan85 = hamsters.filter((hamster) => hamster.heightInMM > 85);
-            console.log(greaterThan85);
+            // inBetween('apple', 'oranges', 'banana');
+            let numbers = [1, 2, 3, 4];
+            function largeNumber(arr) {
+                let num = arr.reduce((start, currentNum) => {
+                    if (start < currentNum) {
+                        start = currentNum
+                    }
+                    return num;
+                }, 0)
+            }
+
+            console.log(largeNumber(numbers));
         })();
 
 
