@@ -4,117 +4,165 @@ $(document).ready(function () {
     // Assigns functions to buttons
 
     $('#clear').click(function () {
+        array = [];
         $('#first-num, #operator, #second-num').val('');
-        text1 = '';
+
     });
 
-    var text1 = $('#one').text();
+    var array = [];
+
     $('#one').click(function (e) {
         e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text1);
+            array.push(1);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else if ($('#operator').val().length <= 0) {
-            $('#first-num').val(text1);
-            text1 += $('#one').text();
-            // console.log(text);
-            // text + $('#one').text();
+            array.push(1);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
-    $('#two').click(function () {
-        text += $(this).text();
+
+    $('#two').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text);
+            array.push(2);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else {
-            $('#first-num').val(text);
+            array.push(2);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
-    $('#three').click(function () {
-        text += $(this).text();
+    $('#three').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val('3');
+            array.push(3);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else {
-            $('#first-num').val(text);
+            array.push(3);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
-    $('#four').click(function () {
-        text += $(this).text();
+    $('#four').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text);
+            array.push(4);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else {
-            $('#first-num').val(text);
+            array.push(4);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
-    $('#five').click(function () {
-        text += $(this).text();
+    $('#five').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text);
+            array.push(5);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else {
-            $('#first-num').val(text);
+            array.push(5);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
-    $('#six').click(function () {
-        text += $(this).text();
+    $('#six').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text);
+            array.push(6);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else {
-            $('#first-num').val(text);
+            array.push(6);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
-    $('#seven').click(function () {
-        text += $(this).text();
+    $('#seven').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text);
+            array.push(7);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else {
-            $('#first-num').val(text);
+            array.push(7);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
-    $('#eight').click(function () {
-        text += $(this).text();
+    $('#eight').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text);
+            array.push(8);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else {
-            $('#first-num').val(text);
+            array.push(8);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
-    $('#nine').click(function () {
-        text += $(this).text();
+    $('#nine').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text);
+            array.push(9);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else {
-            $('#first-num').val(text);
+            array.push(9);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
-    $('#zero').click(function () {
-        text += $(this).text();
+    $('#zero').click(function (e) {
+        e.preventDefault();
         if ($('#operator').val().length > 0) {
-            $('#second-num').val(text);
+            array.push(0);
+            array = joinArr(array);
+            $('#second-num').val(array);
         } else {
-            $('#first-num').val(text);
+            array.push(0);
+            array = joinArr(array);
+            $('#first-num').val(array);
         }
     });
     $('#plus').click(function () {
+        array = [];
         var text = $(this).text();
         $('#operator').html('');
-        $('#operator').val(text);;
+        $('#operator').val(text);
     });
     $('#minus').click(function () {
+        array = [];
         var text = $(this).text();
         $('#operator').html('');
-        $('#operator').val(text);;
+        $('#operator').val(text);
+        ;
     });
     $('#multiply').click(function () {
+        array = [];
         var text = $(this).text();
         $('#operator').html('');
-        $('#operator').val(text);;
+        $('#operator').val(text);
+        ;
     });
     $('#division').click(function () {
+        array = [];
         var text = $(this).texval
         $('#operator').html('');
-        $('#operator').val(text);;
+        $('#operator').val(text);
+        ;
     });
 
     // This executes the math utilizing the math functions
     $('#equals').click(function () {
+        array = [];
         if ($('#operator').val() === '+') {
             $('#first-num').val(addition($('#first-num').val(), $('#second-num').val()) + '');
             $('#second-num').val('');
@@ -129,6 +177,7 @@ $(document).ready(function () {
             $('#second-num').val('');
 
         }
+        console.log($('#first-num').val());
     });
 
     // These functions do the math and parsing logic
@@ -147,4 +196,15 @@ $(document).ready(function () {
     function division(num1, num2) {
         return parseFloat(num1) / parseFloat(num2);
     }
+
+    var list = [1, 2, 3];
+
+    function joinArr(arr) {
+        arr = arr.join('');
+        arr = arr.split(' ');
+        return arr;
+    }
+
+    console.log(joinArr(list));
+
 });

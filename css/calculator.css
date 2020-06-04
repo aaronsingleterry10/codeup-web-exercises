@@ -19,6 +19,7 @@
 #first-num, #operator, #second-num {
     margin-bottom: .5em;
     font-size: 1.5em;
+    border: 1px solid black;
 }
 
 /*#first-num {*/
