@@ -7,20 +7,24 @@
     width: 400px;
     height: 500px;
     grid-template-columns: 100px 100px 25% 25%;
-    grid-template-rows: 50px 20% 20% 20% 20%;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px;
     grid-template-areas:
             'firstNum  firstNum op     secondNum'
-            'one       two     three   plus'
-            'four      five    six     minus'
-            'seven     eight   nine    times'
-            'cleared   zero    equals  division';
+            'plus      minus    times  division'
+            'seven     eight    nine   equals'
+            'four      five     six    equals'
+            'one       two      three  equals'
+            'zero      dots      cleared equals'
 }
 
 #first-num, #operator, #second-num {
     margin-bottom: .5em;
     font-size: 1.5em;
-    border: 1px solid black;
+    color: white;
+    background-color: black;
 }
+
+
 
 /*#first-num {*/
 /*    display: flex;*/
@@ -32,6 +36,14 @@
     justify-content: center;
     align-items: center;
     font-size: 2em;
+}
+
+#plus, #minus, #multiply, #division {
+    background-color: darkorange;
+}
+
+#dot {
+    grid-area: dots;
 }
 
 #clear {

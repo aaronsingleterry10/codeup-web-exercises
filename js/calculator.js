@@ -1,8 +1,6 @@
 "use strict";
 $(document).ready(function () {
-
     // Assigns functions to buttons
-
     $('#clear').click(function () {
         array = [];
         $('#first-num, #operator, #second-num').val('');
@@ -143,41 +141,50 @@ $(document).ready(function () {
         var text = $(this).text();
         $('#operator').html('');
         $('#operator').val(text);
-        ;
     });
     $('#multiply').click(function () {
         array = [];
         var text = $(this).text();
         $('#operator').html('');
         $('#operator').val(text);
-        ;
     });
     $('#division').click(function () {
         array = [];
-        var text = $(this).texval
+        var text = $(this).text();
         $('#operator').html('');
         $('#operator').val(text);
-        ;
+    });
+    $('#dot').click(function (e) {
+        e.preventDefault();
+        if ($('#operator').val().length > 0 && findDecimal(array) < 0) {
+            array.push('.');
+            array = joinArr(array);
+            $('#second-num').val(array);
+        } else if ($('#operator').val().length <= 0 && findDecimal(array) < 0) {
+            array.push('.');
+            array = joinArr(array);
+            $('#first-num').val(array);
+        }
     });
 
     // This executes the math utilizing the math functions
     $('#equals').click(function () {
-        array = [];
         if ($('#operator').val() === '+') {
-            $('#first-num').val(addition($('#first-num').val(), $('#second-num').val()) + '');
+            $('#first-num').val(addition($('#first-num').val(), $('#second-num').val()));
             $('#second-num').val('');
-        } else if ($('#operator').text() === '-') {
-            $('#first-num').val(subtraction($('#first-num').val(), $('#second-num').val()) + '');
+        } else if ($('#operator').val() === '-') {
+            $('#first-num').val(subtraction($('#first-num').val(), $('#second-num').val()));
             $('#second-num').val('');
         } else if ($('#operator').val() === 'x') {
-            $('#first-num').val(multiplication($('#first-num').val(), $('#second-num').val()) + '');
+            $('#first-num').val(multiplication($('#first-num').val(), $('#second-num').val()));
             $('#second-num').val('');
         } else {
-            $('#first-num').val(division($('#first-num').val(), $('#second-num').val()) + '');
+            $('#first-num').val(division($('#first-num').val(), $('#second-num').val()));
             $('#second-num').val('');
 
         }
         console.log($('#first-num').val());
+        array = [];
     });
 
     // These functions do the math and parsing logic
@@ -197,7 +204,7 @@ $(document).ready(function () {
         return parseFloat(num1) / parseFloat(num2);
     }
 
-    var list = [1, 2, 3];
+    var list = ["123."];
 
     function joinArr(arr) {
         arr = arr.join('');
@@ -205,6 +212,14 @@ $(document).ready(function () {
         return arr;
     }
 
-    console.log(joinArr(list));
+    function findDecimal(arr) {
+        arr = arr.join(',');
+        arr = arr.split('');
+        return arr.indexOf('.');
+    }
 
+    console.log(findDecimal(list));
+    // console.log(joinArr(list));
+    // console.log($('#first-num').val());
+    // console.log($('#second-num').val());
 });
