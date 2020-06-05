@@ -2,12 +2,27 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #9A9A9A;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Abel', sans-serif;
+}
+
 #container {
     display: inline-grid;
     width: 400px;
-    height: 500px;
+    height: 312px;
     grid-template-columns: 100px 100px 25% 25%;
-    grid-template-rows: 50px 50px 50px 50px 50px 50px;
+    grid-template-rows: 60px 50px 50px 50px 50px 50px;
     grid-template-areas:
             'firstNum  firstNum op     secondNum'
             'plus      minus    times  division'
@@ -18,18 +33,10 @@
 }
 
 #first-num, #operator, #second-num {
-    margin-bottom: .5em;
     font-size: 1.5em;
     color: white;
     background-color: black;
 }
-
-
-
-/*#first-num {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*}*/
 
 .button {
     display: flex;

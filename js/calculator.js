@@ -4,7 +4,6 @@ $(document).ready(function () {
     $('#clear').click(function () {
         array = [];
         $('#first-num, #operator, #second-num').val('');
-
     });
 
     var array = [];
@@ -21,7 +20,6 @@ $(document).ready(function () {
             $('#first-num').val(array);
         }
     });
-
     $('#two').click(function (e) {
         e.preventDefault();
         if ($('#operator').val().length > 0) {
@@ -166,7 +164,6 @@ $(document).ready(function () {
             $('#first-num').val(array);
         }
     });
-
     // This executes the math utilizing the math functions
     $('#equals').click(function () {
         if ($('#operator').val() === '+') {
@@ -181,12 +178,9 @@ $(document).ready(function () {
         } else {
             $('#first-num').val(division($('#first-num').val(), $('#second-num').val()));
             $('#second-num').val('');
-
         }
-        console.log($('#first-num').val());
         array = [];
     });
-
     // These functions do the math and parsing logic
     function addition(num1, num2) {
         return parseFloat(num1) + parseFloat(num2);
@@ -217,9 +211,4 @@ $(document).ready(function () {
         arr = arr.split('');
         return arr.indexOf('.');
     }
-
-    console.log(findDecimal(list));
-    // console.log(joinArr(list));
-    // console.log($('#first-num').val());
-    // console.log($('#second-num').val());
 });
