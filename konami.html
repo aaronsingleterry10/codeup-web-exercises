@@ -34,7 +34,9 @@
 
     <div id="video">Hello, World!!</div>
 
-    <script src="js/jquery-2.2.4.js"></script>
+<!--    <script src="js/jquery-2.2.4.js"></script>-->
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
     <script>
         "use strict";
         (function() {
@@ -54,12 +56,19 @@
         // === Function that evaluates the konami code ===
 
         function addKey(input, arr1) {
-            if (input === arr1) {
+            // if (input === arr1) {
+            //     bucket.push(input);
+            //     // count = count + 1;
+            // } else {
+            //     bucket = [];
+            //     // count = 0;
+            // }
+            if (input === arr1[count]) {
                 bucket.push(input);
-                // count = count + 1;
+                count = count + 1;
             } else {
                 bucket = [];
-                // count = 0;
+                count = 0;
             }
         }
 
